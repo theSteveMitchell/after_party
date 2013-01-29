@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8250f697-eea2-49e3-8a03-da561430e744" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/after_party.gemspec" afterPath="$PROJECT_DIR$/after_party.gemspec" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/tasks/deploy_task_runner.rake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="after_party.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -21,10 +22,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="after_party.gemspec" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="after_party.gemspec" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/after_party.gemspec">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="28" selection-start="111" selection-end="111" vertical-scroll-proportion="0.084586464">
+            <state line="11" column="33" selection-start="394" selection-end="394" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -51,7 +52,16 @@
       <file leaf-file-name="deploy_task_file.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/deploy_task_file.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="5" selection-start="670" selection-end="670" vertical-scroll-proportion="0.0">
+            <state line="5" column="18" selection-start="152" selection-end="152" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="deploy_task_runner.rake" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/tasks/deploy_task_runner.rake">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="24" selection-start="154" selection-end="154" vertical-scroll-proportion="0.084586464">
               <folding />
             </state>
           </provider>
@@ -135,23 +145,55 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="after_party" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="after_party" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="after_party" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="after_party" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tasks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="75" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="100" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="164" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="191" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="206" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="95" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="186" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1006" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1361" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1090" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="211" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="208" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -164,6 +206,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/tasks" />
       <recent name="$PROJECT_DIR$/lib/generators" />
     </key>
   </component>
@@ -324,20 +367,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/deploy_task_file.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="5" selection-start="670" selection-end="670" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/deploy_task.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/generators/deploy_task/deploy_task_generator.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="21" selection-start="271" selection-end="271" vertical-scroll-proportion="0.0">
@@ -354,7 +383,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/after_party.gemspec">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="28" selection-start="111" selection-end="111" vertical-scroll-proportion="0.084586464">
+        <state line="11" column="33" selection-start="394" selection-end="394" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/deploy_task.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/deploy_task_file.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="18" selection-start="152" selection-end="152" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/tasks/deploy_task_runner.rake">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="24" selection-start="154" selection-end="154" vertical-scroll-proportion="0.084586464">
           <folding />
         </state>
       </provider>
