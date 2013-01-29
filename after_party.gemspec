@@ -1,0 +1,12 @@
+Gem::Specification.new do |gem|
+  gem.name = 'after_party'
+  gem.version = '0.0.1'
+  gem.date = '2013/01/28'
+
+  gem.authors = "Steve Mitchell"
+  gem.summary = "Automated post-deploy tasks for Ruby/Rails. Your deployment is the party. This is the after party"
+  gem.homepage = "http://github.com/theSteveMitchell/after_party"
+
+  gem.files = Dir['lib/**/*.rb']
+  gem.require_path = ['lib']
+end

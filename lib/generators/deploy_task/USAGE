@@ -1,0 +1,9 @@
+Description:
+    Generates a rake task that will be included at the end of the deployment task.  An optional
+    second parameter with the task description is recommended.
+
+Example:
+    rails generate deploy_task data_update 
+
+    This will create:
+        lib/tasks/deployment/<timestamp>_data_update.rake
