@@ -1,3 +1,5 @@
+require 'rails/generators'
+
 module AfterParty
   module Generators
 
