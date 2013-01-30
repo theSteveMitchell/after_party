@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8250f697-eea2-49e3-8a03-da561430e744" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/generators/after_party/templates/create_data_versions_table.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/generators/install_generator.rb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/deploy_task.rb" afterPath="$PROJECT_DIR$/lib/generators/after_party/templates/deploy_task.rb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/deploy_task_file.rb" afterPath="$PROJECT_DIR$/lib/generators/after_party/templates/deploy_task_file.rb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/generators/deploy_task/USAGE" afterPath="$PROJECT_DIR$/lib/generators/after_party/USAGE" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/generators/deploy_task/deploy_task_generator.rb" afterPath="$PROJECT_DIR$/lib/generators/deploy_task_generator.rb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/generators/deploy_task/templates/deploy.rake" afterPath="$PROJECT_DIR$/lib/generators/after_party/templates/deploy.rake" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/generators/after_party/templates/deploy_task.rb" afterPath="$PROJECT_DIR$/lib/generators/after_party/templates/data_version.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/generators/after_party/templates/deploy_task_file.rb" afterPath="$PROJECT_DIR$/lib/generators/after_party/templates/data_version_file.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/generators/deploy_task_generator.rb" afterPath="$PROJECT_DIR$/lib/generators/deploy_task_generator.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/generators/install_generator.rb" afterPath="$PROJECT_DIR$/lib/generators/install_generator.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/tasks/deploy_task_runner.rake" afterPath="$PROJECT_DIR$/lib/tasks/deploy_task_runner.rake" />
     </list>
     <ignored path="after_party.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,7 +38,7 @@
       <file leaf-file-name="deploy_task_generator.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/generators/deploy_task_generator.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="84" selection-start="321" selection-end="334" vertical-scroll-proportion="0.0">
+            <state line="3" column="55" selection-start="128" selection-end="128" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -55,10 +53,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="install_generator.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="install_generator.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/generators/install_generator.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="59" selection-start="555" selection-end="555" vertical-scroll-proportion="0.0">
+            <state line="1" column="56" selection-start="105" selection-end="105" vertical-scroll-proportion="0.01910828">
               <folding />
             </state>
           </provider>
@@ -73,10 +71,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="deploy_task_file.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/generators/after_party/templates/deploy_task_file.rb">
+      <file leaf-file-name="data_version_file.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/generators/after_party/templates/data_version_file.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="101" selection-start="458" selection-end="458" vertical-scroll-proportion="0.0">
+            <state line="2" column="38" selection-start="75" selection-end="75" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -85,14 +83,14 @@
       <file leaf-file-name="deploy_task_runner.rake" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/tasks/deploy_task_runner.rake">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="63" selection-start="324" selection-end="324" vertical-scroll-proportion="0.0">
+            <state line="11" column="5" selection-start="325" selection-end="325" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="deploy_task.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/generators/after_party/templates/deploy_task.rb">
+      <file leaf-file-name="data_version.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/generators/after_party/templates/data_version.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="17" selection-start="17" selection-end="17" vertical-scroll-proportion="0.0">
               <folding />
@@ -100,10 +98,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create_data_versions_table.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="create_data_versions_table.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/generators/after_party/templates/create_data_versions_table.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="76" selection-start="173" selection-end="173" vertical-scroll-proportion="0.11464968">
+            <state line="6" column="32" selection-start="173" selection-end="173" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -127,10 +125,11 @@
         <option value="$PROJECT_DIR$/lib/generators/deploy_task/templates/deploy.rake" />
         <option value="$PROJECT_DIR$/lib/generators/initializer_generator.rb" />
         <option value="$PROJECT_DIR$/lib/generators/after_party/templates/deploy_task.rb" />
-        <option value="$PROJECT_DIR$/lib/generators/after_party/templates/deploy_task_file.rb" />
         <option value="$PROJECT_DIR$/lib/generators/after_party/templates/deploy.rake" />
-        <option value="$PROJECT_DIR$/lib/generators/install_generator.rb" />
         <option value="$PROJECT_DIR$/lib/generators/after_party/templates/create_data_versions_table.rb" />
+        <option value="$PROJECT_DIR$/lib/generators/after_party/templates/deploy_task_file.rb" />
+        <option value="$PROJECT_DIR$/lib/generators/deploy_task_generator.rb" />
+        <option value="$PROJECT_DIR$/lib/generators/install_generator.rb" />
       </list>
     </option>
   </component>
@@ -236,32 +235,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="after_party" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="after_party" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="after_party" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="generators" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="after_party" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -458,7 +431,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/lib/tasks/deploy_task_runner.rake">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="63" selection-start="324" selection-end="324" vertical-scroll-proportion="0.0">
+        <state line="11" column="5" selection-start="325" selection-end="325" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -477,23 +450,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/generators/after_party/templates/deploy_task_file.rb">
+    <entry file="file://$PROJECT_DIR$/lib/generators/after_party/templates/create_data_versions_table.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="101" selection-start="458" selection-end="458" vertical-scroll-proportion="0.0">
+        <state line="6" column="32" selection-start="173" selection-end="173" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/generators/after_party/templates/deploy_task.rb">
+    <entry file="file://$PROJECT_DIR$/lib/generators/after_party/templates/data_version.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="17" selection-start="17" selection-end="17" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/generators/deploy_task_generator.rb">
+    <entry file="file://$PROJECT_DIR$/lib/generators/after_party/templates/data_version_file.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="84" selection-start="321" selection-end="334" vertical-scroll-proportion="0.0">
+        <state line="2" column="38" selection-start="75" selection-end="75" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -505,16 +478,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/generators/install_generator.rb">
+    <entry file="file://$PROJECT_DIR$/lib/generators/deploy_task_generator.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="59" selection-start="555" selection-end="555" vertical-scroll-proportion="0.0">
+        <state line="3" column="55" selection-start="128" selection-end="128" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/generators/after_party/templates/create_data_versions_table.rb">
+    <entry file="file://$PROJECT_DIR$/lib/generators/install_generator.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="76" selection-start="173" selection-end="173" vertical-scroll-proportion="0.11464968">
+        <state line="1" column="56" selection-start="105" selection-end="105" vertical-scroll-proportion="0.01910828">
           <folding />
         </state>
       </provider>

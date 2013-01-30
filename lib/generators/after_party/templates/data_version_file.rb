@@ -1,4 +1,4 @@
-require File.join(Rails.root, 'lib/deploy_task.rb')
+require File.join(Rails.root, 'lib/data_version.rb')
 
 class DataVersionFile
   include ActiveModel::Naming
