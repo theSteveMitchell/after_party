@@ -20,7 +20,6 @@ module AfterParty
         unless migration_exists?
           migration_template "migration.rb", "db/migrate/devise_create_#{table_name}"
         end
-        template "migration.rb", File.join(Rails.root, "db/migrate/#{timestamp}_create_data_versions.rb")
       end
 
       def copy_rake_task
