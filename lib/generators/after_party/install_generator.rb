@@ -18,7 +18,7 @@ module AfterParty
 
       def copy_migration
         unless migration_exists?
-          migration_template "migration.rb", "db/migrate/create_data_versions"
+          template "migration.rb", "db/migrate/#{timestamp}_create_data_versions.rb"
         end
       end
 
@@ -32,7 +32,7 @@ module AfterParty
       end
 
       def migration_exists?
-        Dir.glob("db/migrate/[0-9]*_*.rb").grep(/\d+_create_data_versions.rb$/).first
+        Dir.glob("#{File.join("./db/migrate")}/[0-9]*_create_data_versions.rb").first
       end
     end
   end
