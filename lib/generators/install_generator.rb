@@ -1,5 +1,5 @@
 class InstallGenerator < Rails::Generators::Base
-  source_root File.expand_path('./after_party/templates', __FILE__)
+  source_root File.expand_path('../after_party/templates', __FILE__)
 
   def create_initializer_file
     create_file "config/initializers/initializer.rb", "# Add initialization content here"

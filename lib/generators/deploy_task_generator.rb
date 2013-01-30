@@ -1,7 +1,7 @@
 require 'date'
 
 class DeployTaskGenerator < Rails::Generators::NamedBase
-  source_root File.expand_path('./after_party/templates', __FILE__)
+  source_root File.expand_path('../after_party/templates', __FILE__)
   argument :name, :type => :string
   argument :description, :type => :string, :default => :nil
 
