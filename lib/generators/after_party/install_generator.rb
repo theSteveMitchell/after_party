@@ -18,7 +18,7 @@ module AfterParty
 
       def copy_migration
         unless migration_exists?
-          migration_template "migration.rb", "db/migrate/devise_create_#{table_name}"
+          migration_template "migration.rb", "db/migrate/create_data_versions"
         end
       end
 
