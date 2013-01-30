@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8250f697-eea2-49e3-8a03-da561430e744" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/tasks/deploy_task_runner.rake" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/generators/after_party/templates/create_data_versions_table.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/generators/install_generator.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/deploy_task.rb" afterPath="$PROJECT_DIR$/lib/generators/after_party/templates/deploy_task.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/deploy_task_file.rb" afterPath="$PROJECT_DIR$/lib/generators/after_party/templates/deploy_task_file.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/generators/deploy_task/USAGE" afterPath="$PROJECT_DIR$/lib/generators/after_party/USAGE" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/generators/deploy_task/deploy_task_generator.rb" afterPath="$PROJECT_DIR$/lib/generators/deploy_task_generator.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/generators/deploy_task/templates/deploy.rake" afterPath="$PROJECT_DIR$/lib/generators/after_party/templates/deploy.rake" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="after_party.iws" />
@@ -25,52 +31,79 @@
       <file leaf-file-name="after_party.gemspec" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/after_party.gemspec">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="33" selection-start="394" selection-end="394" vertical-scroll-proportion="0.0">
+            <state line="11" column="18" selection-start="394" selection-end="394" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="deploy_task_generator.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/generators/deploy_task/deploy_task_generator.rb">
+        <entry file="file://$PROJECT_DIR$/lib/generators/deploy_task_generator.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="21" selection-start="271" selection-end="271" vertical-scroll-proportion="0.0">
+            <state line="9" column="84" selection-start="321" selection-end="334" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="USAGE" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/generators/after_party/USAGE">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="install_generator.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/generators/install_generator.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="59" selection-start="555" selection-end="555" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="deploy.rake" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/generators/deploy_task/templates/deploy.rake">
+        <entry file="file://$PROJECT_DIR$/lib/generators/after_party/templates/deploy.rake">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="0" selection-start="314" selection-end="314" vertical-scroll-proportion="0.0">
+            <state line="9" column="10" selection-start="253" selection-end="253" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="deploy_task_file.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/deploy_task_file.rb">
+        <entry file="file://$PROJECT_DIR$/lib/generators/after_party/templates/deploy_task_file.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="18" selection-start="152" selection-end="152" vertical-scroll-proportion="0.0">
+            <state line="16" column="101" selection-start="458" selection-end="458" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="deploy_task_runner.rake" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="deploy_task_runner.rake" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/tasks/deploy_task_runner.rake">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="24" selection-start="154" selection-end="154" vertical-scroll-proportion="0.084586464">
+            <state line="11" column="63" selection-start="324" selection-end="324" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="deploy_task.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/deploy_task.rb">
+        <entry file="file://$PROJECT_DIR$/lib/generators/after_party/templates/deploy_task.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="0" column="17" selection-start="17" selection-end="17" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create_data_versions_table.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/generators/after_party/templates/create_data_versions_table.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="76" selection-start="173" selection-end="173" vertical-scroll-proportion="0.11464968">
               <folding />
             </state>
           </provider>
@@ -91,6 +124,13 @@
       <list>
         <option value="$PROJECT_DIR$/.gemspec" />
         <option value="$PROJECT_DIR$/after_party.gemspec" />
+        <option value="$PROJECT_DIR$/lib/generators/deploy_task/templates/deploy.rake" />
+        <option value="$PROJECT_DIR$/lib/generators/initializer_generator.rb" />
+        <option value="$PROJECT_DIR$/lib/generators/after_party/templates/deploy_task.rb" />
+        <option value="$PROJECT_DIR$/lib/generators/after_party/templates/deploy_task_file.rb" />
+        <option value="$PROJECT_DIR$/lib/generators/after_party/templates/deploy.rake" />
+        <option value="$PROJECT_DIR$/lib/generators/install_generator.rb" />
+        <option value="$PROJECT_DIR$/lib/generators/after_party/templates/create_data_versions_table.rb" />
       </list>
     </option>
   </component>
@@ -173,7 +213,55 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tasks" />
+              <option name="myItemId" value="generators" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="after_party" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="after_party" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="generators" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="after_party" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="after_party" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="after_party" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="generators" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="after_party" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -206,8 +294,9 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/lib/tasks" />
       <recent name="$PROJECT_DIR$/lib/generators" />
+      <recent name="$PROJECT_DIR$/lib/generators/deploy_task/templates" />
+      <recent name="$PROJECT_DIR$/lib/tasks" />
     </key>
   </component>
   <component name="RunManager">
@@ -305,7 +394,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3297362" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297362" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -367,44 +456,65 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/generators/deploy_task/deploy_task_generator.rb">
+    <entry file="file://$PROJECT_DIR$/lib/tasks/deploy_task_runner.rake">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="21" selection-start="271" selection-end="271" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/generators/deploy_task/templates/deploy.rake">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="314" selection-end="314" vertical-scroll-proportion="0.0">
+        <state line="11" column="63" selection-start="324" selection-end="324" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/after_party.gemspec">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="33" selection-start="394" selection-end="394" vertical-scroll-proportion="0.0">
+        <state line="11" column="18" selection-start="394" selection-end="394" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/deploy_task.rb">
+    <entry file="file://$PROJECT_DIR$/lib/generators/after_party/USAGE">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/deploy_task_file.rb">
+    <entry file="file://$PROJECT_DIR$/lib/generators/after_party/templates/deploy_task_file.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="18" selection-start="152" selection-end="152" vertical-scroll-proportion="0.0">
+        <state line="16" column="101" selection-start="458" selection-end="458" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/tasks/deploy_task_runner.rake">
+    <entry file="file://$PROJECT_DIR$/lib/generators/after_party/templates/deploy_task.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="24" selection-start="154" selection-end="154" vertical-scroll-proportion="0.084586464">
+        <state line="0" column="17" selection-start="17" selection-end="17" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/generators/deploy_task_generator.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="84" selection-start="321" selection-end="334" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/generators/after_party/templates/deploy.rake">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="10" selection-start="253" selection-end="253" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/generators/install_generator.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="59" selection-start="555" selection-end="555" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/generators/after_party/templates/create_data_versions_table.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="76" selection-start="173" selection-end="173" vertical-scroll-proportion="0.11464968">
           <folding />
         </state>
       </provider>

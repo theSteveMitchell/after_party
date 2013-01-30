@@ -1,4 +1,4 @@
-class DeployTask < ActiveRecord::Base
+class DataVersion < ActiveRecord::Base
   attr_accessible :version
 
   def self.completed_task?(version)

@@ -1,13 +1,13 @@
-namespace :deployment do
+namespace :after_party do
 
     desc "<%= task_description %>"
     task :<%= file_name %> => :environment do
-      puts "running deployment task '<%= file_name %>'"
+      puts "running deploy task '<%= file_name %>'"
 
       # put your task implementation here
       
       # update task as completed
-      DeployTask.create :version => '<%= timestamp %>'
+      DataVersion.create :version => '<%= timestamp %>'
     end
 
 end
