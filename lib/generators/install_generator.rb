@@ -15,7 +15,10 @@ class InstallGenerator < Rails::Generators::Base
 
   def copy_migration
     template "create_data_versions_table.rb", File.join(Rails.root, "db/migrate/#{timestamp}_create_data_versions.rb")
+  end
 
+  def copy_rake_task
+    template "deploy_task_runner.rake", File.join(Rails.root, "lib/tasks/deploy_task_runner.rake")
   end
 
   private
