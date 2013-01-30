@@ -14,8 +14,15 @@ test/tmp
 test/version_tmp
 tmp
 log
+# Ignore all logfiles and tempfiles.
+log/*.log
+log/*.pid
 
 # YARD artifacts
 .yardoc
 _yardoc
 doc/
+
+# Ignore the default SQLite database.
+db/*.sqlite3
+db/*.sqlite3-journal
