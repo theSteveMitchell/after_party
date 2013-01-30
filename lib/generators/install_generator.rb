@@ -17,4 +17,9 @@ class InstallGenerator < Rails::Generators::Base
     template "create_data_versions_table.rb", File.join(Rails.root, "db/migrate/#{timestamp}_create_data_versions.rb")
 
   end
+
+  private
+  def timestamp
+    @timestamp ||= Time.now.utc.strftime("%Y%m%d%H%M%S")
+  end
 end

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8250f697-eea2-49e3-8a03-da561430e744" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/generators/deploy_task_generator.rb" afterPath="$PROJECT_DIR$/lib/generators/deploy_task_generator.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/generators/install_generator.rb" afterPath="$PROJECT_DIR$/lib/generators/install_generator.rb" />
     </list>
     <ignored path="after_party.iws" />
@@ -31,10 +31,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="deploy_task_generator.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="deploy_task_generator.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/generators/deploy_task_generator.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="34" selection-start="107" selection-end="107" vertical-scroll-proportion="0.05732484">
+            <state line="24" column="6" selection-start="511" selection-end="587" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -49,10 +49,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="install_generator.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="install_generator.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/generators/install_generator.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="34" selection-start="83" selection-end="83" vertical-scroll-proportion="0.0">
+            <state line="19" column="85" selection-start="624" selection-end="624" vertical-scroll-proportion="0.36305732">
               <folding />
             </state>
           </provider>
@@ -124,8 +124,8 @@
         <option value="$PROJECT_DIR$/lib/generators/after_party/templates/deploy.rake" />
         <option value="$PROJECT_DIR$/lib/generators/after_party/templates/create_data_versions_table.rb" />
         <option value="$PROJECT_DIR$/lib/generators/after_party/templates/deploy_task_file.rb" />
-        <option value="$PROJECT_DIR$/lib/generators/install_generator.rb" />
         <option value="$PROJECT_DIR$/lib/generators/deploy_task_generator.rb" />
+        <option value="$PROJECT_DIR$/lib/generators/install_generator.rb" />
       </list>
     </option>
   </component>
@@ -474,16 +474,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/generators/install_generator.rb">
+    <entry file="file://$PROJECT_DIR$/lib/generators/deploy_task_generator.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="34" selection-start="83" selection-end="83" vertical-scroll-proportion="0.0">
+        <state line="24" column="6" selection-start="511" selection-end="587" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/generators/deploy_task_generator.rb">
+    <entry file="file://$PROJECT_DIR$/lib/generators/install_generator.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="34" selection-start="107" selection-end="107" vertical-scroll-proportion="0.05732484">
+        <state line="19" column="85" selection-start="624" selection-end="624" vertical-scroll-proportion="0.36305732">
           <folding />
         </state>
       </provider>
