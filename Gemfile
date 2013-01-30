@@ -38,6 +38,7 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 group :test, :development do
+  gem "rspec"
   gem "rspec-rails", "~> 2.0"
   gem "generator_spec"
 end

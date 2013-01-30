@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-AfterParty::Application.config.secret_token = '819d19c770832c29d310fcacb6aadc0c2bbe31a53c86d070bce1a5487e1fb48419ce6e5a5347688862cd306190a79e9291b8afd408feaa5704122238a430b67c'
+AfterParty::Application.config.secret_token = 'e818bc969c960deaef9016194a08e9154f61d230948bf2e9132d3355e67014f5beaf5e0ccab0ed107ea1ce4a7af4c97f757489fae6232326bf5595231665b6be'

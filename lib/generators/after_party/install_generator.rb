@@ -11,11 +11,11 @@ module AfterParty
       end
 
       def copy_data_version
-        template "data_version.rb", File.join(Rails.root, "lib/data_version.rb")
+        template "data_version.rb", "lib/after_party/data_version.rb"
       end
 
       def copy_data_version_file
-        template "data_version_file.rb", File.join(Rails.root, "lib/data_version_file.rb")
+        template "data_version_file.rb", "lib/after_party/data_version_file.rb"
       end
 
       def copy_migration
@@ -25,7 +25,7 @@ module AfterParty
       end
 
       def copy_rake_task
-        template "deploy_task_runner.rake", File.join(Rails.root, "lib/tasks/deploy_task_runner.rake")
+        template "deploy_task_runner.rake", "lib/tasks/deploy_task_runner.rake"
       end
 
       private

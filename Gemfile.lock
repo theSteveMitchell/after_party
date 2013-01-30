@@ -83,6 +83,10 @@ GEM
     rake (10.0.3)
     rdoc (3.12)
       json (~> 1.4)
+    rspec (2.12.0)
+      rspec-core (~> 2.12.0)
+      rspec-expectations (~> 2.12.0)
+      rspec-mocks (~> 2.12.0)
     rspec-core (2.12.2)
     rspec-expectations (2.12.1)
       diff-lcs (~> 1.1.3)
@@ -123,6 +127,7 @@ DEPENDENCIES
   generator_spec
   jquery-rails
   rails (= 3.2.11)
+  rspec
   rspec-rails (~> 2.0)
   sass-rails (~> 3.2.3)
   sqlite3
