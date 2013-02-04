@@ -13,20 +13,20 @@ require "generator_spec/test_case"
     run_generator
   end
 
-  it "creates a test initializer" do
+  it "creates an initializer" do
     assert_file "config/initializers/after_party.rb", "# Welcome to the party!"
   end
 
   it "creates the data version model" do
-    assert_file "lib/after_party/data_version.rb"
+    assert_file "lib/after_party/data_version.rb", /class DataVersion < ActiveRecord::Base/
   end
 
   it "creates the data_version loader to" do
-    assert_file "lib/after_party/data_version_file.rb"
+    assert_file "lib/after_party/data_version_file.rb", /class DataVersionFile/
   end
 
   it "creates the task runner rake file" do
-    assert_file "lib/tasks/deploy_task_runner.rake"
+    assert_file "lib/tasks/deploy_task_runner.rake", /task :run => :environment do/
 
   end
 

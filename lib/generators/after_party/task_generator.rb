@@ -8,13 +8,13 @@ module AfterParty
 
       def copy_deploy_task
 
-        template "deploy.rake", File.join(Rails.root, "lib/tasks/deployment/#{timestamp}_#{file_name}.rake")
+        template "deploy.rake",  "lib/tasks/deployment/#{timestamp}_#{file_name}.rake"
 
       end
 
       private
       def file_name
-        name.underscore
+        name.underscore.tr(" ", "_")
       end
 
       def task_description
