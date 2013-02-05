@@ -25,11 +25,6 @@ require "generator_spec/test_case"
     assert_file "lib/after_party/data_version_file.rb", /class DataVersionFile/
   end
 
-  it "creates the task runner rake file" do
-    assert_file "lib/tasks/deploy_task_runner.rake", /task :run => :environment do/
-
-  end
-
   it "creates the migration file " do
     assert_migration "db/migrate/create_data_versions.rb", /def change/
   end

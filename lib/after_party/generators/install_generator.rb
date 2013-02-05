@@ -24,10 +24,6 @@ module AfterParty
         end
       end
 
-      def copy_rake_task
-        template "deploy_task_runner.rake", "lib/tasks/deploy_task_runner.rake"
-      end
-
       private
       def timestamp
         @timestamp ||= Time.now.utc.strftime("%Y%m%d%H%M%S")
