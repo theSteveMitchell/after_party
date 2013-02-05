@@ -3,7 +3,7 @@ require 'rails'
 module AfterParty
   class Railtie < Rails::Railtie
     rake_tasks do
-      Dir.glob('tasks/*.rake').each { |r| import r }
+      load "tasks/deploy_task_runner.rake"
     end
   end
 end
