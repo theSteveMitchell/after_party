@@ -1,4 +1,5 @@
 namespace :after_party do
+  desc "runs (in order) all pending after_party deployment tasks, if they have not run yet agains the current db."
   task :run => :environment do
     tasks = DataVersionFile.pending_files.map {|f| "after_party:#{f.task_name}"}
 
