@@ -17,14 +17,6 @@ require "generator_spec/test_case"
     assert_file "config/initializers/after_party.rb", "# Welcome to the party!"
   end
 
-  it "creates the data version model" do
-    assert_file "lib/after_party/data_version.rb", /class DataVersion < ActiveRecord::Base/
-  end
-
-  it "creates the data_version loader to" do
-    assert_file "lib/after_party/data_version_file.rb", /class DataVersionFile/
-  end
-
   it "creates the migration file " do
     assert_migration "db/migrate/create_data_versions.rb", /def change/
   end

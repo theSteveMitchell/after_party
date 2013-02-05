@@ -10,14 +10,6 @@ module AfterParty
         create_file "config/initializers/after_party.rb", "# Welcome to the party!"
       end
 
-      def copy_data_version
-        template "data_version.rb", "lib/after_party/data_version.rb"
-      end
-
-      def copy_data_version_file
-        template "data_version_file.rb", "lib/after_party/data_version_file.rb"
-      end
-
       def copy_migration
         unless migration_exists?
           template "migration.rb", "db/migrate/#{timestamp}_create_data_versions.rb"
