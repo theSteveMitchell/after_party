@@ -41,5 +41,6 @@ group :test, :development do
   gem "rspec"
   gem "rspec-rails", "~> 2.0"
   gem "generator_spec"
+  gem 'factory_girl_rails'
 end
 

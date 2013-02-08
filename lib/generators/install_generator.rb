@@ -22,7 +22,7 @@ module AfterParty
       end
 
       def migration_exists?
-        Dir.glob("#{File.join("./db/migrate")}/[0-9]*_create_data_versions.rb").first
+        Dir.glob("/db/migrate/[0-9]*_create_data_versions.rb").first
       end
     end
   end

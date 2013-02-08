@@ -16,7 +16,7 @@ class DataVersionFile
   end
 
   def pending?
-    timestamp && !DataVersion.completed_task?(timestamp)
+      timestamp && !DataVersion.completed_task?(timestamp)
   end
 
   def parse_filename
