@@ -2,7 +2,8 @@ require 'spec_helper'
 require 'fileutils'
 #require Rails.root.join('lib/after_party/models/active_record/deploy_task.rb')
 
-#Dir[Rails.root.join("lib/after_party/models/active_record/*.rb")].each {|f| require f}
+Dir[Rails.root.join("lib/after_party/models/*.rb")].each {|f| require f}
+Dir[Rails.root.join("lib/after_party/models/active_record/*.rb")].each {|f| require f}
 
 describe DataVersion do
   include FileUtils

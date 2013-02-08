@@ -1,4 +1,4 @@
-Dir[Rails.root.join("lib/after_party/*.rb")].each {|f| require f}
+
 
 class DataVersionFile
   include ActiveModel::Naming
