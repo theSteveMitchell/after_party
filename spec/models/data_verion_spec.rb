@@ -21,14 +21,13 @@ describe DataVersion do
     File.open(File.join(FILE_PATH, "20120205141454_m_three.rake"), "w+") do |f|
       f.write("this is some contents for file 3")
     end
-
-    DataVersionFile::FILE_MASK = File.join(FILE_PATH, "/*.rake")
-
+    silence_warnings do
+      DataVersionFile::FILE_MASK = File.join(FILE_PATH, "/*.rake")
+    end
 
   end
 
   it "should return an ordered list of pending tasks" do
-    #DataVersionFile::FILE_MASK = File.join(FILE_PATH, "/*.rake")
     list = DataVersionFile.pending_files
     list.count.should == 3
 
@@ -38,9 +37,8 @@ describe DataVersion do
   end
 
   it "should not include tasks that have already been recorded in the database" do
-
-    a = build_stubbed :data_version, :version => "20120205141454"
-    b = build_stubbed :data_version, :version => "20130207948264"
+    a = build :data_version, :version => "20120205141454"
+    b = build :data_version, :version => "20130207948264"
     DataVersion.stub(:all).and_return([a, b])
     list = DataVersionFile.pending_files
     list.count.should == 1

@@ -2,6 +2,5 @@
 
 FactoryGirl.define do
   factory :data_version do
-    version "20130207121212"
   end
 end
