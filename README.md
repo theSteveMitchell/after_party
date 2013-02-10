@@ -18,31 +18,43 @@ gem 'after_party'  ##NOT YET PUBLISHED TO RUBYGEMS.ORG DUE TO THEIR SYSTEM OUTAG
 ```
 and "bundle install"
 
-Run the generator to create the required files in your application
+If you are using ActiveRecord, run the install generator to create the initializer file and a database migration.
 
 ```console
 rails generate after_party:install
+rake db:migrate
 ```
+
+
+If you are using Mongoid, run the install generator with "mongoid" as the first argument
+
+```console
+rails generate after_party:install mongoid
+```
+
+That's it.
+
+##Usage
 
 Creating a deploy task is easily done with
 
 ```console
-rails generate after_party:task "description_of_what_the_task_does"
+rails generate after_party:task task_name [optional_description_of_the_task]
 ```
 
 This creates a new rake task for you:
 ```console
-create lib/tasks/deployment/20130130215258_description_of_what_the_task_does.rake
+create lib/tasks/deployment/20130130215258_task_name.rake
 ```
 
-You can then run the rake task by name, or by calling
+after_party deploy tasks are run with
 ```console
 rake after_party:run
 ```
 
-The above command with run ALL your deploy tasks in order, and record each one in your database as it runs (just like schema migrations).
+This runs (in order of timestamp) ALL your deploy tasks that have not been recorded yet in the environment.  It records each task in your database as they are completed (just like schema migrations).
 
-Finally, You'll want to glue this all together.  Update the deploy.rb (or whatever deployment script you use) so the tasks run automatically.  E.g. do a capistrano task:
+Finally, You'll want to glue this all together.  Update the deploy.rb (or whatever deployment script you use) so the tasks run automatically.  In capistrano, it looks something like:
 
 ```ruby
  #config/deploy.rb
@@ -57,6 +69,18 @@ after  'deploy:update_code', 'db:migrate', 'db:seed', 'deploy:after_party'
 ```
 
 This will ensure your deploy tasks always run after your migrations, so they can safely load or interact with any models in your system.
+
+##Hackery
+After_party deploy tasks are just enhanced rake tasks, so you can run them manually as often as you like with
+```console
+rake after_party:task_name #(the same name you used to create the task...You can always find them in /lib/tasks/deployment if you forget)
+```
+
+And, if for some reason you want a task to run with EACH deployment, instead of just the first one, just comment this line in the generated rake file:
+```ruby
+# update task as completed.  If you remove the line below, the task will run with every deploy (or every time you call after_party:run)
+DataVersion.create :version => '<%= timestamp %>'
+```
 
 ## Upcoming features:
 
