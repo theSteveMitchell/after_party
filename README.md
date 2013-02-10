@@ -16,8 +16,7 @@ After_party is compatible with Rails 3.1 or above.  Add it to your Gemfile with:
 #Gemfile
 gem 'after_party'  ##NOT YET PUBLISHED TO RUBYGEMS.ORG DUE TO THEIR SYSTEM OUTAGE
 ```
-
-Run bundle to install the gem.
+and "bundle install"
 
 Run the generator to create the required files in your application
 

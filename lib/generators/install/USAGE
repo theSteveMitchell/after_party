@@ -1,0 +1,17 @@
+Description:
+    Generates the required files for after_party to generate and run deploy tasks
+    Accepts an optional parameter as the name of your ORM, default is "active_record", also accepts "mongoid"
+
+Example:
+    rails generate after_party:install
+
+    This will create:
+        config/initializers/after_party.rb
+        db/migrate/{timestamp}_create_data_versions.rb
+
+Non-migrating ORMs:
+    rails generate after_party:install mongoid
+
+        This will create:
+            config/initializers/after_party.rb
+
