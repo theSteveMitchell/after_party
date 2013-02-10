@@ -1,11 +1,10 @@
 require 'spec_helper'
 require 'fileutils'
-#require Rails.root.join('lib/after_party/models/active_record/deploy_task.rb')
 
 Dir[Rails.root.join("lib/after_party/models/*.rb")].each {|f| require f}
 Dir[Rails.root.join("lib/after_party/models/active_record/*.rb")].each {|f| require f}
 
-describe DataVersion do
+describe TaskRecord do
   include FileUtils
 
   before(:all) do
@@ -23,13 +22,13 @@ describe DataVersion do
       f.write("this is some contents for file 3")
     end
     silence_warnings do
-      DataVersionFile::FILE_MASK = File.join(FILE_PATH, "/*.rake")
+      TaskRecorder::FILE_MASK = File.join(FILE_PATH, "/*.rake")
     end
 
   end
 
   it "should return an ordered list of pending tasks" do
-    list = DataVersionFile.pending_files
+    list = TaskRecorder.pending_files
     list.count.should == 3
 
     list.first.filename.should =~ /20120205141454_m_three.rake/
@@ -38,10 +37,10 @@ describe DataVersion do
   end
 
   it "should not include tasks that have already been recorded in the database" do
-    a = build :data_version, :version => "20120205141454"
-    b = build :data_version, :version => "20130207948264"
-    DataVersion.stub(:all).and_return([a, b])
-    list = DataVersionFile.pending_files
+    a = build :task_record, :version => "20120205141454"
+    b = build :task_record, :version => "20130207948264"
+    TaskRecord.stub(:all).and_return([a, b])
+    list = TaskRecorder.pending_files
     list.count.should == 1
     list.first.filename.should =~ /20130205176456_z_first.rake/
 

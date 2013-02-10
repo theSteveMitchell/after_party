@@ -8,8 +8,8 @@ module AfterParty
       load "tasks/deploy_task_runner.rake"
     end
 
-    initializer "load_data_version_models" do
-      load "after_party/models/data_version_file.rb"
+    initializer "load_task_record_models" do
+      load "after_party/models/task_recorder.rb"
     end
 
     generators do

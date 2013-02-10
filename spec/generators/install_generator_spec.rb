@@ -19,7 +19,7 @@ arguments %w(active_record)
     end
 
     it "creates the migration file " do
-      assert_migration "db/migrate/create_data_versions.rb", /def change/
+      assert_migration "db/migrate/create_task_records.rb", /def change/
     end
   end
 end
@@ -44,7 +44,7 @@ describe AfterParty::Generators::InstallGenerator do
     end
 
     it "creates no migration file " do
-      assert_no_migration "db/migrate/create_data_versions.rb"
+      assert_no_migration "db/migrate/create_task_records.rb"
     end
   end
 end

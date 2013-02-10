@@ -7,7 +7,7 @@ Example:
 
     This will create:
         config/initializers/after_party.rb
-        db/migrate/{timestamp}_create_data_versions.rb
+        db/migrate/{timestamp}_create_task_records.rb
 
 Non-migrating ORMs:
     rails generate after_party:install mongoid

@@ -1,4 +1,4 @@
-class DataVersion
+class TaskRecord
   include Mongoid::Document
   include Mongoid::Timestamps
 

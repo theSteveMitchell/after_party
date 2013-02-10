@@ -14,7 +14,7 @@ module AfterParty
 
       def copy_migration
         if requires_migration?
-          template "migration.rb", "db/migrate/#{timestamp}_create_data_versions.rb"
+          template "migration.rb", "db/migrate/#{timestamp}_create_task_records.rb"
         end
       end
 
@@ -24,7 +24,7 @@ module AfterParty
       end
 
       def migration_exists?
-        Dir.glob("/db/migrate/[0-9]*_create_data_versions.rb").first
+        Dir.glob("/db/migrate/[0-9]*_create_task_records.rb").first
       end
 
       def requires_migration?

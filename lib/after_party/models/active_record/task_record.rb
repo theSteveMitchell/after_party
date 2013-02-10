@@ -1,4 +1,4 @@
-class DataVersion < ActiveRecord::Base
+class TaskRecord < ActiveRecord::Base
   attr_accessible :version
 
   def self.completed_task?(version)

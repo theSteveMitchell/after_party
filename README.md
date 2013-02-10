@@ -79,15 +79,14 @@ rake after_party:task_name #(the same name you used to create the task...You can
 And, if for some reason you want a task to run with EACH deployment, instead of just the first one, just comment this line in the generated rake file:
 ```ruby
 # update task as completed.  If you remove the line below, the task will run with every deploy (or every time you call after_party:run)
-DataVersion.create :version => '<%= timestamp %>'
+TaskRecord.create :version => '<%= timestamp %>'
 ```
 
 ## Upcoming features:
 
-1. Support for Mongoid databases.  Currently ActiveRecord is required.
-2. Support for singluar/plural naming convention in databases.  Currently plural is default.
-3. Support for additional parameters in the TaskGenerator to facilitate some smart-generation of task body.
-4. Check for presence of deploy.rb.
+1. Support for singluar/plural naming convention in databases.  Currently plural is default.
+2. Support for additional parameters in the TaskGenerator to facilitate some smart-generation of task body.
+3. Check for presence of deploy.rb.
 
 
 

@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(:version => 20130208204820) do
 
-  create_table "data_versions", :id => false, :force => true do |t|
+  create_table "task_records", :id => false, :force => true do |t|
     t.string "version", :null => false
   end
 
