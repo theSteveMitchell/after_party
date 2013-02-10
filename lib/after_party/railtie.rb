@@ -8,11 +8,6 @@ module AfterParty
     end
 
     initializer "load_data_version_models" do
-      if defined? Mongoid
-        load "models/mongoid/data_version.rb"
-      else
-        load "models/active_record/data_version.rb"
-      end
       load "models/data_version_file.rb"
     end
 

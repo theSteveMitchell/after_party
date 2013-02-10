@@ -5,13 +5,15 @@ module AfterParty
 
     class InstallGenerator < Rails::Generators::Base
       source_root File.expand_path('../templates', __FILE__)
+      argument :orm_name, :type => :string, :default => "active_record"
+
 
       def create_initializer_file
-        create_file "config/initializers/after_party.rb", "# Welcome to the party!"
+        template "after_party.rb", "config/initializers/after_party.rb"
       end
 
       def copy_migration
-        unless migration_exists?
+        if requires_migration?
           template "migration.rb", "db/migrate/#{timestamp}_create_data_versions.rb"
         end
       end
@@ -24,6 +26,11 @@ module AfterParty
       def migration_exists?
         Dir.glob("/db/migrate/[0-9]*_create_data_versions.rb").first
       end
+
+      def requires_migration?
+        orm_name == "active_record" && !migration_exists?
+      end
+
     end
   end
 end
