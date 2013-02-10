@@ -24,7 +24,7 @@ module AfterParty
       end
 
       def migration_exists?
-        Dir.glob("/db/migrate/[0-9]*_create_task_records.rb").first
+        Dir.glob("db/migrate/[0-9]*_create_task_records.rb").first
       end
 
       def requires_migration?
