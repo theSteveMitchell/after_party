@@ -92,16 +92,23 @@ TaskRecord.create :version => '<%= timestamp %>'
 
 ## So...who cares?
 
+
+
 Some people might argue that deploy tasks aren't a real necessity.  True, anything you do in a deploy task can be done in a regular rake task, or in a migration.  But these are much more convenient, and reliable, for the following scenarios:
 
-* You are adding a new column to a table (through a migration) and want to populate it by loading/editing/saving your models.
-* I've added a data field to a database model, and I need to populate that field with some complex logic.  This involves iterating through model instances and updating values.  I can only do this reliably if my model matches the code (meaning that all migrations must run before my data update)
 * I need to remove invalid data, import from an external source, remove invalid characters from a model's title, or otherwise do some data-related update that any honest developer could not call a schema migration.
 * I have a task that needs to run at least once in each environment, but I still want a rake task that I can call manually, if I ever need to.
 * I want to keep my DB schema updates separated from my data updates, so I can easily reference data updates if I need to.
+* I need to make some complex update using ruby code (i.e. removing the tallest user from my application) And I want to have automated tests to ensure this code works.
 * I just deployed my code to production, and I don't want to be late for the after party!
 
 You can do all of these things in seeds, migrations, manual rake tasks, etc.  But why make things harder on yourself?
+
+Take care to not use deploy tasks for the wrong reason, such as this sceario:
+
+* You have occasional failures in your migrations due to model-DB mismatch [as explained here](http://guides.rubyonrails.org/migrations.html#using-models-in-your-migrations) 
+
+
 
 
 
