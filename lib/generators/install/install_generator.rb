@@ -24,7 +24,9 @@ module AfterParty
       end
 
       def migration_exists?
-        Dir.glob("db/migrate/[0-9]*_create_task_records.rb").first
+        absolute = File.expand_path("db/migrate/", destination_root)
+        #dirname, file_name = File.dirname(absolute), File.basename(absolute).sub(/\.rb$/, '')
+        Dir.glob("#{absolute}/[0-9]*_create_task_records.rb").first
       end
 
       def requires_migration?

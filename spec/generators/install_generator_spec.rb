@@ -15,7 +15,7 @@ arguments %w(active_record)
     end
 
     it "creates an initializer" do
-      assert_file "config/initializers/after_party.rb", /require "lib\/after_party\/active_record"/
+      assert_file "config/initializers/after_party.rb", /require "after_party\/active_record.rb"/
     end
 
     it "creates the migration file " do
@@ -40,7 +40,7 @@ describe AfterParty::Generators::InstallGenerator do
     end
 
     it "creates an initializer for mongoid" do
-      assert_file "config/initializers/after_party.rb", /require "lib\/after_party\/mongoid"/
+      assert_file "config/initializers/after_party.rb", /require "after_party\/mongoid.rb"/
     end
 
     it "creates no migration file " do
