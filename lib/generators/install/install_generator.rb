@@ -7,14 +7,13 @@ module AfterParty
       source_root File.expand_path('../templates', __FILE__)
       argument :orm_name, :type => :string, :default => "active_record"
 
-
       def create_initializer_file
         template "after_party.rb", "config/initializers/after_party.rb"
       end
 
       def copy_migration
         if requires_migration?
-          template "migration.rb", "db/migrate/#{timestamp}_create_task_records.rb"
+          template "migration.rb", "db/migrate/#{timestamp}_create_#{table_name}.rb"
         end
       end
 
@@ -26,11 +25,16 @@ module AfterParty
       def migration_exists?
         absolute = File.expand_path("db/migrate/", destination_root)
         #dirname, file_name = File.dirname(absolute), File.basename(absolute).sub(/\.rb$/, '')
-        Dir.glob("#{absolute}/[0-9]*_create_task_records.rb").first
+        Dir.glob("#{absolute}/[0-9]*_create_#{table_name}.rb").first
       end
 
       def requires_migration?
         orm_name == "active_record" && !migration_exists?
+      end
+
+      def table_name
+        table = "task_record"
+        ActiveRecord::Base.pluralize_table_names ? table.pluralize : table
       end
 
     end

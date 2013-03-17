@@ -21,7 +21,32 @@ arguments %w(active_record)
     it "creates the migration file " do
       assert_migration "db/migrate/create_task_records.rb", /def change/
     end
+
+    it "creates the migration with plural table name if pluralization is on " do
+      #it's on by default, brah
+      assert_migration "db/migrate/create_task_records.rb", /create_table :task_records, :id => false do |t|/
+    end
+
+
   end
+
+  context "with active_record singular table names" do
+    before(:all) do
+      prepare_destination
+      ActiveRecord::Base.pluralize_table_names = false
+      run_generator
+    end
+
+    after(:all) do
+      ActiveRecord::Base.pluralize_table_names = true
+    end
+
+    it "creates the migration with singular table name if pluralization is off " do
+      assert_migration "db/migrate/create_task_record.rb", /create_table :task_record, :id => false do |t|/
+    end
+
+  end
+
 end
 
 describe AfterParty::Generators::InstallGenerator do

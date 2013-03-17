@@ -84,9 +84,8 @@ TaskRecord.create :version => '<%= timestamp %>'
 
 ## Upcoming features:
 
-1. Support for singluar/plural naming convention in databases.  Currently plural is default.
-2. Support for additional parameters in the TaskGenerator to facilitate some smart-generation of task body.
-3. Check for presence of deploy.rb.
+1. Support for additional parameters in the TaskGenerator to facilitate some smart-generation of task body.
+2. Check for presence of deploy.rb.
 
 
 
