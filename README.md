@@ -108,7 +108,11 @@ Take care to not use deploy tasks for the wrong reason, such as this sceario:
 * You have occasional failures in your migrations due to model-DB mismatch [as explained here](http://guides.rubyonrails.org/migrations.html#using-models-in-your-migrations) 
 
 
+## Contribute ##
 
+Created by [Steve Mitchell](https://github.com/theSteveMitchell).
+
+If you find an issue with After_party please log an issue.  I will accept pull requests.  
 
 
 
