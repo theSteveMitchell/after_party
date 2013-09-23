@@ -1,12 +1,12 @@
 ## After_party
 
 After_party helps you create and manage automated deploy tasks in your Rails application.
-It works like schema_migrations for special rake tasks.  It records the ones that have been run in the environment, and runs the ones that haven't run yet.
+It works like schema_migrations for special rake tasks.  It records the tasks that have been run in the environment, so that each time you deploy, it runs the ones that haven't run yet.
 It has some key differences over schema migrations:
 
-1. They always run after all the migrations, so your tasks can assume all your models are updated and available.
-3. By default, tasks run once in every environment, the first time they are deployed there (just like migrations)
-4. BUT you can always run the task manually whenever you want, or have it run after each deployment.
+1. They always run after migrations are completed, so your tasks can safely assume all your DB schema matches your class definitions
+3. By default, tasks run once in every environment, the first time they are deployed there (just like schema migrations)
+4. BUT you can always run the task manually whenever you want, or have it run after each deployment forever.
 
 ## Installation
 
@@ -36,13 +36,13 @@ That's it.
 
 ##Usage
 
-Creating a deploy task is easily done with
+Creating a deploy task is easily done with the generator
 
 ```console
 rails generate after_party:task task_name [optional_description_of_the_task]
 ```
 
-This creates a new rake task for you:
+This creates a new rake task for you, that includes a description and timestamp:
 ```console
 create lib/tasks/deployment/20130130215258_task_name.rake
 ```
@@ -102,6 +102,9 @@ Some people might argue that deploy tasks aren't a real necessity.  True, anythi
 * I just deployed my code to production, and I don't want to be late for the after party!
 
 You can do all of these things in seeds, migrations, manual rake tasks, etc.  But why make things harder on yourself?
+
+## Caveats (pronounced "Cave ats")
+* Rollback behavior is for the birds.  Should your task fail halfway through, it will not record progress (and will fail your deploy if you're using the capistrano config).  Since these tasks might be data updates, those changes can be very large, and rollback/recording progress is not supported.  Build your tasks to be idempotent, so if they are run more than once it doesn't kill you.
 
 Take care to not use deploy tasks for the wrong reason, such as this sceario:
 
