@@ -1,6 +1,6 @@
 Gem::Specification.new do |gem|
   gem.name = 'after_party'
-  gem.version = '0.0.1'
+  gem.version = '1.0'
   gem.date = Date.today.to_s
 
   gem.authors = "Steve Mitchell"
