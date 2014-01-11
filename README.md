@@ -85,8 +85,7 @@ TaskRecord.create :version => '<%= timestamp %>'
 ## Upcoming features:
 
 1. Support for additional parameters in the TaskGenerator to facilitate some smart-generation of task body.
-2. Check for presence of deploy.rb.
-
+2. Full Capistrano integration
 
 
 ## So...who cares?
