@@ -70,7 +70,19 @@ after  'deploy:update_code', 'db:migrate', 'db:seed', 'deploy:after_party'
 
 This will ensure your deploy tasks always run after your migrations, so they can safely load or interact with any models in your system.
 
-##Hackery
+##Asyncronous runs
+
+Well yes, a long-running deploy task will halt your deployment, thanks for noticing.  Sometimes you might want your task to finish before you switch the symlink and your new code is in production.  Sometimes, you just want to start the task, and forget about it.  In that case do this: 
+
+```ruby
+task :after_party, :roles => :app, :only => { :primary => true }  do
+     run "cd #{release_path} ; nohup #{rake} after_party:run RAILS_ENV=#{rails_env} > #{current_path}/log/after_party.log  2>&1 &", :pty => false
+  end
+```
+
+This way, your tasks will start, but not block the deployment.  They will still record themselves when they finish, so you can check for completion, and if they fail, they will re-run at the next deploy.  So it's all good!
+
+##re-running tasks
 After_party deploy tasks are just enhanced rake tasks, so you can run them manually as often as you like with
 ```console
 rake after_party:task_name #(the same name you used to create the task...You can always find them in /lib/tasks/deployment if you forget)
