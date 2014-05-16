@@ -6,15 +6,23 @@ describe AfterParty::Generators::TaskGenerator do
 
   include GeneratorSpec::TestCase
   destination File.expand_path("../../tmp", __FILE__)
-  arguments %w(a_task_that_I_need_to_run a_description_of_said_task)
 
   before(:all) do
     prepare_destination
-    run_generator
   end
 
-  it "creates the migration file " do
-    assert_generated "lib/tasks/deployment/a_task_that_i_need_to_run.rake", /desc "Deployment task: a_description_of_said_task"/
+  context "Generator run with all arguments" do
+    it "creates the migration file and takes description from arguments " do
+      run_generator %w(a_first_task_that_I_need_to_run a_description_of_said_task)
+      assert_generated "lib/tasks/deployment/a_first_task_that_i_need_to_run.rake", /desc "Deployment task: a_description_of_said_task"/
+    end
+  end
+
+  context "Generator run with mandatory arguments only" do
+    it "creates the migration file and uses task name as its description" do
+      run_generator ['a_task_that_I_need_to_run', '']
+      assert_generated "lib/tasks/deployment/a_task_that_i_need_to_run.rake", /desc "Deployment task: a_task_that_i_need_to_run"/
+    end
   end
 
   private
@@ -26,7 +34,7 @@ describe AfterParty::Generators::TaskGenerator do
 
   def task_file_name(relative) #:nodoc:
     absolute = File.expand_path(relative, destination_root)
-    dirname, file_name = File.dirname(absolute), File.basename(absolute).sub(/\.rb$/, '')
+    dirname, file_name = File.dirname(absolute), File.basename(absolute).sub(/\.rb$/, '').downcase
     Dir.glob("#{dirname}/[0-9]*_*.rake").grep(/\d+_#{file_name}$/).first
   end
 
