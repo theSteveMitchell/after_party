@@ -1,7 +1,7 @@
 require 'date'
 module AfterParty
   module Generators
-    class TaskGenerator < Rails::Generators::NamedBase
+    class TaskGenerator < Rails::Generators::Base
       source_root File.expand_path('../templates', __FILE__)
       argument :name, :type => :string
       argument :description, :type => :string, :default => ''
