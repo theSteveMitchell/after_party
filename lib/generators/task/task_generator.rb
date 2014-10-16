@@ -1,15 +1,13 @@
 require 'date'
 module AfterParty
   module Generators
-    class TaskGenerator < Rails::Generators::NamedBase
+    class TaskGenerator < Rails::Generators::Base
       source_root File.expand_path('../templates', __FILE__)
       argument :name, :type => :string
-      argument :description, :type => :string, :default => ''
+      class_option :description, :type => :string, :description => "Include a description"
 
       def copy_deploy_task
-
         template "deploy.rake",  "lib/tasks/deployment/#{timestamp}_#{file_name}.rake"
-
       end
 
       private
@@ -18,7 +16,7 @@ module AfterParty
       end
 
       def task_description
-        "Deployment task: #{description.blank? ? file_name : description}"
+        "Deployment task: #{options.description.blank? ? file_name : options.description}"
       end
 
       def timestamp

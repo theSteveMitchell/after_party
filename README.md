@@ -39,7 +39,7 @@ That's it.
 Creating a deploy task is easily done with the generator
 
 ```console
-rails generate after_party:task task_name [optional_description_of_the_task]
+rails generate after_party:task task_name --description=optional_description_of_the_task
 ```
 
 This creates a new rake task for you, that includes a description and timestamp:
@@ -72,7 +72,7 @@ This will ensure your deploy tasks always run after your migrations, so they can
 
 ##Asyncronous runs
 
-Well yes, a long-running deploy task will halt your deployment, thanks for noticing.  Sometimes you might want your task to finish before you switch the symlink and your new code is in production.  Sometimes, you just want to start the task, and forget about it.  In that case do this: 
+Well yes, a long-running deploy task will halt your deployment, thanks for noticing.  Sometimes you might want your task to finish before you switch the symlink and your new code is in production.  Sometimes, you just want to start the task, and forget about it.  In that case do this:
 
 ```ruby
 task :after_party, :roles => :app, :only => { :primary => true }  do
@@ -119,7 +119,7 @@ You can do all of these things in seeds, migrations, manual rake tasks, etc.  Bu
 
 Take care to not use deploy tasks for the wrong reason, such as this sceario:
 
-* You have occasional failures in your migrations due to model-DB mismatch [as explained here](http://guides.rubyonrails.org/migrations.html#using-models-in-your-migrations) 
+* You have occasional failures in your migrations due to model-DB mismatch [as explained here](http://guides.rubyonrails.org/migrations.html#using-models-in-your-migrations)
 
 
 ## Contribute ##
@@ -127,16 +127,3 @@ Take care to not use deploy tasks for the wrong reason, such as this sceario:
 Created by [Steve Mitchell](https://github.com/theSteveMitchell).
 
 If you find an issue with After_party please log an issue.  I will accept pull requests.  
-
-
-
-
-
-
-
-
-
-
-
-
-
