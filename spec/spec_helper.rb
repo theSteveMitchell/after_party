@@ -3,6 +3,11 @@ ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
+require 'factory_girl'
+
+Dir[Rails.root.join("lib/after_party/models/*.rb")].each {|f| require f}
+Dir[Rails.root.join("lib/after_party/models/active_record/*.rb")].each {|f| require f}
+Dir[Rails.root.join("spec/factories/*.rb")].each {|f| require f}
 
 Dir[Rails.root.join("lib/*.rb")].each {|f| require f}
 Dir[Rails.root.join("lib/generators/install/*.rb")].each {|f| require f}
