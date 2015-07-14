@@ -70,6 +70,14 @@ after  'deploy:update_code', 'db:migrate', 'db:seed', 'deploy:after_party'
 
 This will ensure your deploy tasks always run after your migrations, so they can safely load or interact with any models in your system.
 
+You can also reset the list of executed tasks by running:
+
+```console
+rake after_party:reset
+```
+
+This will allow all tasks to be re-run the next time `rake after_party:run` is executed.  While you probably wouldn't want to execute the above command on a production database, it can be handy while working in development.
+
 ##Asyncronous runs
 
 Well yes, a long-running deploy task will halt your deployment, thanks for noticing.  Sometimes you might want your task to finish before you switch the symlink and your new code is in production.  Sometimes, you just want to start the task, and forget about it.  In that case do this:
