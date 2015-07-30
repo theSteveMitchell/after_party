@@ -13,8 +13,10 @@ Dir[Rails.root.join("lib/*.rb")].each {|f| require f}
 Dir[Rails.root.join("lib/generators/install/*.rb")].each {|f| require f}
 Dir[Rails.root.join("lib/generators/task/*.rb")].each {|f| require f}
 
-RSpec.configure do |config|
+ActiveRecord::Migrator.migrate(File.join(Rails.root, 'db/migrate'))
 
+RSpec.configure do |config|
+  config.infer_spec_type_from_file_location!
   config.include FactoryGirl::Syntax::Methods
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your

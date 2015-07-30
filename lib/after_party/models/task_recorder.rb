@@ -15,7 +15,7 @@ module AfterParty
     end
 
     def pending?
-        timestamp && !TaskRecord.completed_task?(timestamp)
+      timestamp && !TaskRecord.completed_task?(timestamp)
     end
 
     def parse_filename

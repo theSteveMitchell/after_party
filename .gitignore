@@ -17,6 +17,7 @@ log
 # Ignore all logfiles and tempfiles.
 log/*.log
 log/*.pid
+Gemfile.lock
 
 # YARD artifacts
 .yardoc
