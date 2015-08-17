@@ -91,7 +91,7 @@ rake after_party:task_name #(the same name you used to create the task...You can
 And, if for some reason you want a task to run with EACH deployment, instead of just the first one, just comment this line in the generated rake file:
 ```ruby
 # update task as completed.  If you remove the line below, the task will run with every deploy (or every time you call after_party:run)
-TaskRecord.create :version => '<%= timestamp %>'
+AfterParty::TaskRecord.create :version => '<%= timestamp %>'
 ```
 
 ## Upcoming features:

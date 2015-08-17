@@ -1,5 +1,4 @@
 require 'after_party'
-require 'after_party'
 require 'rails'
 module AfterParty
   class Railtie < Rails::Railtie
