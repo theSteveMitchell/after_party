@@ -4,7 +4,7 @@ rvm:
  - "2.0.0"
  - "2.1.4"
  - "2.2-head"
- jruby:
+jruby:
  - "jruby-head"
-# uncomment this line if your project needs to run something other than `rake`:
-# script: bundle exec rspec spec
+
+script: bundle exec rspec spec
