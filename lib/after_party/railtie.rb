@@ -5,6 +5,7 @@ module AfterParty
     #railtie is loaded from lib/after_party.rb.  So all load paths need to be relative to /lib
     rake_tasks do
       load "tasks/deploy_task_runner.rake"
+      load "tasks/reset_task_runner.rake"
     end
 
     initializer "load_task_record_models" do
