@@ -130,3 +130,9 @@ You can do all of these things in seeds, migrations, manual rake tasks, etc.  Bu
 Created by [Steve Mitchell](https://github.com/theSteveMitchell).
 
 If you find an issue with After_party please log an issue.  I will accept pull requests.  
+
+To setup the dev environment, run
+```console
+rails generate after_party:install
+rake db:migrate
+```
