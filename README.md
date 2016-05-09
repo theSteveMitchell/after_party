@@ -34,7 +34,7 @@ rails generate after_party:install mongoid
 
 That's it.
 
-##Usage
+## Usage
 
 Creating a deploy task is easily done with the generator
 
@@ -54,6 +54,11 @@ rake after_party:run
 
 This runs (in order of timestamp) ALL your deploy tasks that have not been recorded yet in the environment.  It records each task in your database as they are completed (just like schema migrations).
 
+To check if a party ran, you can always run this command to get migration-like overview of your tasks.
+```console
+rake after_party:status
+```
+
 Finally, You'll want to glue this all together.  Update the deploy.rb (or whatever deployment script you use) so the tasks run automatically.  In capistrano, it looks something like:
 
 ```ruby
@@ -70,7 +75,7 @@ after  'deploy:update_code', 'db:migrate', 'db:seed', 'deploy:after_party'
 
 This will ensure your deploy tasks always run after your migrations, so they can safely load or interact with any models in your system.
 
-##Asyncronous runs
+## Asyncronous runs
 
 Well yes, a long-running deploy task will halt your deployment, thanks for noticing.  Sometimes you might want your task to finish before you switch the symlink and your new code is in production.  Sometimes, you just want to start the task, and forget about it.  In that case do this:
 
@@ -82,7 +87,7 @@ task :after_party, :roles => :app, :only => { :primary => true }  do
 
 This way, your tasks will start, but not block the deployment.  They will still record themselves when they finish, so you can check for completion, and if they fail, they will re-run at the next deploy.  So it's all good!
 
-##re-running tasks
+## re-running tasks
 After_party deploy tasks are just enhanced rake tasks, so you can run them manually as often as you like with
 ```console
 rake after_party:task_name #(the same name you used to create the task...You can always find them in /lib/tasks/deployment if you forget)
@@ -114,7 +119,7 @@ Some people might argue that deploy tasks aren't a real necessity.  True, anythi
 
 You can do all of these things in seeds, migrations, manual rake tasks, etc.  But why make things harder on yourself?
 
-## Caveats, Warnings, and Daily Affirmations 
+## Caveats, Warnings, and Daily Affirmations
 * Rollback behavior is for the birds.  Should your task fail halfway through, it will not record progress (and will fail your deploy if you're using the capistrano config).  Since these tasks might be data updates, those changes can be very large, and rollback/recording progress is not supported.  Build your tasks to be idempotent, so if they are run more than once it doesn't kill you.
 
 * Make sure you understand the difference between schema migration and data migration.  After_party is meant to help you with the latter.  Sometimes it's appropriate for schema migrations to manipulate date (i.e. to populate a new field with a default, or convert an integer column to a string).  Sometimes this requires you to work with your rails models in the migration.  If you have occasional failures in your migrations due to model-DB mismatch [as explained here](http://guides.rubyonrails.org/migrations.html#using-models-in-your-migrations) then After_party might not be the right tool.
