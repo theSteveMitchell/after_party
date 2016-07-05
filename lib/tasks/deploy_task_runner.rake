@@ -10,4 +10,24 @@ namespace :after_party do
     end
 
   end
+
+  desc "Check the status of after_party deployment tasks"
+  task :status => :environment do
+    tasks = Dir[AfterParty::TaskRecorder::FILE_MASK].collect do |filename|
+      recorder = AfterParty::TaskRecorder.new(filename)
+      {
+        version: recorder.timestamp,
+        task_name: recorder.task_name.humanize,
+        status: recorder.pending? ? 'down' : ' up '
+      }
+    end
+
+    puts <<-EOF
+Status   Task ID         Task Name
+--------------------------------------------------
+    EOF
+    tasks.each do |task|
+      puts " #{task[:status]}    #{task[:version]}  #{task[:task_name].capitalize}"
+    end
+  end
 end
