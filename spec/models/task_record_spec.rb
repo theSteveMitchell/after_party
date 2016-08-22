@@ -19,6 +19,9 @@ module AfterParty
       File.open(File.join(FILE_PATH, "20120205141454_m_three.rake"), "w+") do |f|
         f.write("this is some contents for file 3")
       end
+      File.open(File.join(FILE_PATH, "20120105141454_pretask_four.rake"), "w+") do |f|
+        f.write("this is some contents for file 4")
+      end
       silence_warnings do
         TaskRecorder::FILE_MASK = File.join(FILE_PATH, "/*.rake")
       end
@@ -26,6 +29,7 @@ module AfterParty
     end
 
     it "should return an ordered list of pending tasks" do
+      allow(AfterParty).to receive(:enable_pretasks?).and_return(true)
       list = AfterParty::TaskRecorder.pending_files
       expect(list.count).to eq(3)
 
@@ -35,6 +39,7 @@ module AfterParty
     end
 
     it "should not include tasks that have already been recorded in the database" do
+      allow(AfterParty).to receive(:enable_pretasks?).and_return(true)
       a = build :task_record, :version => "20120205141454"
       b = build :task_record, :version => "20130207948264"
       expect(AfterParty::TaskRecord).to receive(:all).at_least(:once).and_return([a, b])

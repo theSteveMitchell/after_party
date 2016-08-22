@@ -4,4 +4,6 @@ AfterParty.setup do |config|
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
   require "after_party/<%= orm_name %>.rb"
+
+  # config.enable_pretasks = true
 end
