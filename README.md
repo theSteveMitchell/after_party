@@ -75,6 +75,24 @@ after  'deploy:update_code', 'db:migrate', 'db:seed', 'deploy:after_party'
 
 This will ensure your deploy tasks always run after your migrations, so they can safely load or interact with any models in your system.
 
+## pre-tasks
+Additionally, there are a set of tasks that can be separated from the regular tasks to run as pre-deployment tasks.  This can be useful
+when you want the same mechanism of tracking when a task has run to avoid re-runs.
+
+To enable, modify the after_party initializer.
+``` ruby
+AfterParty.setup do |config|
+  # [...]
+  config.enable_pretasks = true
+end
+```
+
+Then tasks that start with the string, `pretask`, are hidden from the regular task runner and status view. Instead
+are run and viewed from `after_part:pretask:run` and `after_part:pretask:status`.  Create the tasks using the same task generator,
+just simply start the name with `pretask`.
+
+These pre-tasks share the same version table and location in `lib/tasks/deployment`.
+
 ## Asyncronous runs
 
 Well yes, a long-running deploy task will halt your deployment, thanks for noticing.  Sometimes you might want your task to finish before you switch the symlink and your new code is in production.  Sometimes, you just want to start the task, and forget about it.  In that case do this:

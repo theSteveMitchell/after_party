@@ -19,6 +19,9 @@ module AfterParty
       File.open(File.join(FILE_PATH, "20120205141454_m_three.rake"), "w+") do |f|
         f.write("this is some contents for file 3")
       end
+      File.open(File.join(FILE_PATH, "20120105141454_pretask_four.rake"), "w+") do |f|
+        f.write("this is some contents for file 4")
+      end
       silence_warnings do
         TaskRecorder::FILE_MASK = File.join(FILE_PATH, "/*.rake")
       end
@@ -26,21 +29,23 @@ module AfterParty
     end
 
     it "should return an ordered list of pending tasks" do
-      list = TaskRecorder.pending_files
-      list.count.should == 3
+      allow(AfterParty).to receive(:enable_pretasks?).and_return(true)
+      list = AfterParty::TaskRecorder.pending_files
+      expect(list.count).to eq(3)
 
-      list.first.filename.should =~ /20120205141454_m_three.rake/
-      list[1].filename.should =~ /20130205176456_z_first.rake/
-      list[2].filename.should =~ /20130207948264_a_second2.rake/
+      expect(list.first.filename).to match /20120205141454_m_three.rake/
+      expect(list[1].filename).to match /20130205176456_z_first.rake/
+      expect(list[2].filename).to match /20130207948264_a_second2.rake/
     end
 
     it "should not include tasks that have already been recorded in the database" do
+      allow(AfterParty).to receive(:enable_pretasks?).and_return(true)
       a = build :task_record, :version => "20120205141454"
       b = build :task_record, :version => "20130207948264"
-      TaskRecord.stub(:all).and_return([a, b])
-      list = TaskRecorder.pending_files
-      list.count.should == 1
-      list.first.filename.should =~ /20130205176456_z_first.rake/
+      expect(AfterParty::TaskRecord).to receive(:all).at_least(:once).and_return([a, b])
+      list = AfterParty::TaskRecorder.pending_files
+      expect(list.count).to eq(1)
+      expect(list.first.filename).to match /20130205176456_z_first.rake/
 
     end
 
