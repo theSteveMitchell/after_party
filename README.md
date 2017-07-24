@@ -25,6 +25,32 @@ rails generate after_party:install
 rake db:migrate
 ```
 
+You might also need to specify the version of Rails in your migration file rather than inheriting from the base ActiveRecord class. For example, if you are using Rails 5:
+
+Change this:
+
+```
+class CreateTaskRecords < ActiveRecord::Migration
+  def change
+    create_table :task_records, :id => false do |t|
+      t.string :version, :null => false
+    end
+  end
+end
+```
+
+To this:
+
+```
+class CreateTaskRecords < ActiveRecord::Migration[5.0]
+  def change
+    create_table :task_records, :id => false do |t|
+      t.string :version, :null => false
+    end
+  end
+end
+```
+
 
 If you are using Mongoid, run the install generator with "mongoid" as the first argument
 
