@@ -3,6 +3,7 @@ require 'date'
 module AfterParty
   module Generators
     class TaskGenerator < Rails::Generators::Base
+      FILE_MASK = File.join(Rails.root, "lib/tasks/deployment/*.rake")
       source_root(File.expand_path('../templates', __FILE__))
       argument(:name, type: :string)
       class_option(
@@ -12,10 +13,15 @@ module AfterParty
       )
 
       def copy_deploy_task
-        template(
+        file_names = Dir[FILE_MASK].collect{ |f| AfterParty::TaskRecorder.new(f) }.map {|f| "#{f.task_name}"}
+        if file_names.include?(file_name)
+          puts "Error: Please Create a unique task name"
+        else
+          template(
           'deploy.txt.erb',
           "lib/tasks/deployment/#{timestamp}_#{file_name}.rake"
-        )
+          )
+        end   
       end
 
       private
