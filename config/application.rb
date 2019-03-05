@@ -42,6 +42,10 @@ module AfterParty
     # Enable escaping HTML in JSON.
     config.active_support.escape_html_entities_in_json = true
 
+    if Rails::VERSION::MINOR >= 2
+      config.active_record.sqlite3.represent_boolean_as_integer = true
+    end
+
     # Use SQL instead of Active Record's schema dumper when creating the database.
     # This is necessary if your schema can't be completely dumped by the schema dumper,
     # like if you have constraints or database-specific column types
