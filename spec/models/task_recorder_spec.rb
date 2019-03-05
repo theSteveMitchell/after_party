@@ -45,7 +45,5 @@ module AfterParty
         end
       end
     end
-
-
   end
 end
