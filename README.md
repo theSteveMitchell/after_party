@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/theSteveMitchell/after_party.svg?branch=master)](https://travis-ci.org/theSteveMitchell/after_party)
+
 ## After_party
 
 After_party helps you create and manage automated deploy tasks in your Rails application.
