@@ -18,6 +18,6 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency "rspec"
   gem.add_development_dependency "rspec-rails", "~> 3.4"
   gem.add_development_dependency "generator_spec"
-  gem.add_development_dependency "factory_girl_rails"
+  gem.add_development_dependency "factory_bot"
   gem.add_development_dependency "sqlite3",'~> 1.3.6'
 end

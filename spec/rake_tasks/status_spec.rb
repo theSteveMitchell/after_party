@@ -26,8 +26,8 @@ describe "rake after_party:status" do
         AfterParty::TaskRecorder::FILE_MASK = File.join(FILE_PATH, "/*.rake")
       end
 
-      a = FactoryGirl.build :task_record, :version => "20120205141454"
-      b = FactoryGirl.build :task_record, :version => "20130207948264"
+      a = FactoryBot.build :task_record, :version => "20120205141454"
+      b = FactoryBot.build :task_record, :version => "20130207948264"
       allow(AfterParty::TaskRecord).to receive(:all) { [a, b] }
     end
 
