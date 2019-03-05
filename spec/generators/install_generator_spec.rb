@@ -1,14 +1,14 @@
 require "spec_helper"
-
-describe AfterParty::Generators::InstallGenerator do
-
 require "generator_spec/test_case"
 
-include GeneratorSpec::TestCase
-destination File.expand_path("../../tmp", __FILE__)
-arguments %w(active_record)
+
+describe AfterParty::Generators::InstallGenerator do
+  include GeneratorSpec::TestCase
 
   context "with active_record" do
+    destination File.expand_path("../../tmp", __FILE__)
+    arguments %w(active_record)
+
     before(:all) do
       prepare_destination
       run_generator
@@ -50,14 +50,12 @@ arguments %w(active_record)
 end
 
 describe AfterParty::Generators::InstallGenerator do
-
-  require "generator_spec/test_case"
-
   include GeneratorSpec::TestCase
-  destination File.expand_path("../../tmp", __FILE__)
-  arguments %w(mongoid)
 
   context "with mongoid" do
+    destination File.expand_path("../../tmp", __FILE__)
+    arguments %w(mongoid)
+
     before(:all) do
       prepare_destination
 
