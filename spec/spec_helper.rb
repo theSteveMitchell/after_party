@@ -4,7 +4,6 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'factory_bot'
 
-Dir[Rails.root.join("lib/after_party/models/*.rb")].each {|f| require f}
 Dir[Rails.root.join("lib/after_party/models/active_record/*.rb")].each {|f| require f}
 Dir[Rails.root.join("spec/factories/*.rb")].each {|f| require f}
 
