@@ -13,7 +13,11 @@ Dir[Rails.root.join("lib/*.rb")].each {|f| require f}
 Dir[Rails.root.join("lib/generators/install/*.rb")].each {|f| require f}
 Dir[Rails.root.join("lib/generators/task/*.rb")].each {|f| require f}
 
-ActiveRecord::Migrator.migrate(File.join(Rails.root, 'db/migrate'))
+if ActiveRecord.gem_version.to_s.to_f >= 5.0
+  ActiveRecord::Migration.migrate(File.join(Rails.root, 'db/migrate'))
+else
+  ActiveRecord::Migrator.migrate(File.join(Rails.root, 'db/migrate'))
+end
 
 RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
