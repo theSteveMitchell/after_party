@@ -7,4 +7,4 @@ rvm:
 jruby:
  - "jruby-head"
 
-script: bundle exec rspec spec
+script: bundle exec rake db:migrate RAILS_ENV=test && bundle exec rspec spec
