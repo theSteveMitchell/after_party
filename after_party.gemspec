@@ -1,7 +1,7 @@
 Gem::Specification.new do |gem|
   gem.name = 'after_party'
   gem.version = '1.10.0'
-  gem.date = Date.today.to_s
+  gem.date = "2016-07-05"
 
   gem.authors = "Steve Mitchell"
   gem.description = "Automated post-deploy tasks for Ruby/Rails. Your deployment is the party. This is the after party"
@@ -18,6 +18,6 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency "rspec"
   gem.add_development_dependency "rspec-rails", "~> 3.4"
   gem.add_development_dependency "generator_spec"
-  gem.add_development_dependency "factory_girl_rails"
-  gem.add_development_dependency "sqlite3"
+  gem.add_development_dependency "factory_bot"
+  gem.add_development_dependency "sqlite3",'~> 1.3.6'
 end

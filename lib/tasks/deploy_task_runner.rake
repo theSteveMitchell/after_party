@@ -13,7 +13,7 @@ namespace :after_party do
 
   desc "Check the status of after_party deployment tasks"
   task :status => :environment do
-    tasks = Dir[AfterParty::TaskRecorder::FILE_MASK].collect do |filename|
+    tasks = Dir[AfterParty::TaskRecorder::FILE_MASK].sort.collect do |filename|
       recorder = AfterParty::TaskRecorder.new(filename)
       {
         version: recorder.timestamp,
