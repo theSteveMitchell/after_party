@@ -44,7 +44,7 @@ module AfterParty
 
     ActiveRecord::SchemaDumper.ignore_tables = /^ar_internal*/
 
-    if ActiveRecord.gem_version.to_s.to_f >= 5.0
+    if ActiveRecord.version.to_s.to_f >= 5.0
       config.active_record.sqlite3.represent_boolean_as_integer = true
     end
 
