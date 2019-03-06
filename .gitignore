@@ -20,6 +20,7 @@ log/*.pid
 Gemfile.lock
 
 gemfiles/Gemfile-rails-3.2.x
+gemfiles/Gemfile.rails-3.2.x.lock
 
 # YARD artifacts
 .yardoc
