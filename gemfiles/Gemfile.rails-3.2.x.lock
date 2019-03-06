@@ -101,6 +101,7 @@ DEPENDENCIES
   factory_bot
   generator_spec
   mongoid
+  rack-cache (~> 1.2)
   rake (~> 0.8.7)
   rspec
   rspec-rails (~> 3.4)
