@@ -1,4 +1,4 @@
-if ActiveRecord.gem_version.to_s.to_f >= 5.0
+if ActiveRecord::VERSION::MAJOR >= 5
   class CreateTaskRecords < ActiveRecord::Migration[4.2]
     def change
       create_table :task_records, :id => false do |t|
