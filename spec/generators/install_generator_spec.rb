@@ -26,8 +26,38 @@ describe AfterParty::Generators::InstallGenerator do
       #it's on by default, brah
       assert_migration "db/migrate/create_task_records.rb", /create_table :task_records, :id => false do |t|/
     end
+  end
 
+  context "under rails 5" do
+    destination File.expand_path("../../tmp", __FILE__)
+    arguments %w(active_record)
 
+    it "copies the template with rails 5 compatible migrations" do
+
+      allow(AfterParty::Generators::InstallGenerator).to receive(:requires_version_tag?).and_return(true)
+      allow_any_instance_of(AfterParty::Generators::InstallGenerator).to receive(:rails_version_for_migration).and_return("20.7")
+
+      prepare_destination
+      run_generator
+
+      assert_migration "db/migrate/create_task_records.rb", /class CreateTaskRecords < ActiveRecord::Migration\[20.7\]\n/
+
+    end
+  end
+
+  context "under rails 3" do
+    destination File.expand_path("../../tmp", __FILE__)
+    arguments %w(active_record)
+
+    it "copies the template with rails 3/4 compatible migrations" do
+
+      allow_any_instance_of(AfterParty::Generators::InstallGenerator).to receive(:requires_version_tag?).and_return(false)
+      prepare_destination
+      run_generator
+
+      assert_migration "db/migrate/create_task_records.rb", /class CreateTaskRecords < ActiveRecord::Migration\n/
+
+    end
   end
 
   context "with active_record singular table names" do
