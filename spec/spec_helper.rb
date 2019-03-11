@@ -2,8 +2,7 @@
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
-require 'rspec/autorun'
-require 'factory_girl'
+require 'factory_bot'
 
 Dir[Rails.root.join("lib/after_party/models/*.rb")].each {|f| require f}
 Dir[Rails.root.join("lib/after_party/models/active_record/*.rb")].each {|f| require f}
@@ -13,11 +12,15 @@ Dir[Rails.root.join("lib/*.rb")].each {|f| require f}
 Dir[Rails.root.join("lib/generators/install/*.rb")].each {|f| require f}
 Dir[Rails.root.join("lib/generators/task/*.rb")].each {|f| require f}
 
-ActiveRecord::Migrator.migrate(File.join(Rails.root, 'db/migrate'))
+if ActiveRecord::VERSION::MAJOR >= 5
+  ActiveRecord::Migration.migrate(File.join(Rails.root, 'db/migrate'))
+else
+  ActiveRecord::Migrator.migrate(File.join(Rails.root, 'db/migrate'))
+end
 
 RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
-  config.include FactoryGirl::Syntax::Methods
+  config.include FactoryBot::Syntax::Methods
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false

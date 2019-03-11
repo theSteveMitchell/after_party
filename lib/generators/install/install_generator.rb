@@ -13,8 +13,16 @@ module AfterParty
 
       def copy_migration
         if requires_migration?
-          template "migration.rb", "db/migrate/#{timestamp}_create_#{table_name}.rb"
+          if requires_version_tag?
+            template "migration.txt.erb", "db/migrate/#{timestamp}_create_#{table_name}.rb"
+          else
+            template "migration-rails-3-4.txt.erb", "db/migrate/#{timestamp}_create_#{table_name}.rb"
+          end
         end
+      end
+
+      def requires_version_tag?
+        ActiveRecord::VERSION::MAJOR >= 5
       end
 
       private
@@ -26,6 +34,10 @@ module AfterParty
         absolute = File.expand_path("db/migrate/", destination_root)
         #dirname, file_name = File.dirname(absolute), File.basename(absolute).sub(/\.rb$/, '')
         Dir.glob("#{absolute}/[0-9]*_create_#{table_name}.rb").first
+      end
+
+      def rails_version_for_migration
+        "#{ActiveRecord::VERSION::MAJOR}.#{ActiveRecord::VERSION::MINOR}"
       end
 
       def requires_migration?
