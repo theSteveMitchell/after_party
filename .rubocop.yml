@@ -54,3 +54,6 @@ Layout/IndentHeredoc:
 
 Style/HashSyntax:
   Enabled: false
+
+Style/ExpandPathArguments:
+  Enabled: false

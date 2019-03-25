@@ -4,7 +4,7 @@ module AfterParty
   module Generators
     # creates after_party tasks
     class TaskGenerator < Rails::Generators::Base
-      source_root(File.expand_path('templates', __dir__))
+      source_root(File.expand_path('../templates', __FILE__))
       argument(:name, type: :string)
       class_option(
         :description,

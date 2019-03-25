@@ -3,9 +3,9 @@ require 'generator_spec/test_case'
 
 describe AfterParty::Generators::InstallGenerator do
   include GeneratorSpec::TestCase
+  destination File.expand_path('../../tmp', __FILE__)
 
   context 'with active_record' do
-    destination File.expand_path('../tmp', __dir__)
     arguments %w[active_record]
 
     before(:all) do
@@ -25,58 +25,54 @@ describe AfterParty::Generators::InstallGenerator do
       # it's on by default.
       assert_migration 'db/migrate/create_task_records.rb', /create_table :task_records, :id => false do |t|/
     end
-  end
 
-  context 'under rails 5' do
-    destination File.expand_path('../tmp', __dir__)
-    arguments %w[active_record]
+    context 'under rails 5' do
+      it 'copies the template with rails 5 compatible migrations' do
+        allow_any_instance_of(AfterParty::Generators::InstallGenerator)
+          .to receive(:requires_version_tag?).and_return(true)
+        allow_any_instance_of(AfterParty::Generators::InstallGenerator)
+          .to receive(:rails_version_for_migration).and_return('20.7')
 
-    it 'copies the template with rails 5 compatible migrations' do
-      allow_any_instance_of(AfterParty::Generators::InstallGenerator).to receive(:requires_version_tag?).and_return(true)
-      allow_any_instance_of(AfterParty::Generators::InstallGenerator).to receive(:rails_version_for_migration).and_return('20.7')
+        prepare_destination
+        run_generator
 
-      prepare_destination
-      run_generator
-
-      assert_migration 'db/migrate/create_task_records.rb', /class CreateTaskRecords < ActiveRecord::Migration\[20.7\]\n/
-    end
-  end
-
-  context 'under rails 3' do
-    destination File.expand_path('../tmp', __dir__)
-    arguments %w[active_record]
-
-    it 'copies the template with rails 3/4 compatible migrations' do
-      allow_any_instance_of(AfterParty::Generators::InstallGenerator).to receive(:requires_version_tag?).and_return(false)
-      prepare_destination
-      run_generator
-
-      assert_migration 'db/migrate/create_task_records.rb', /class CreateTaskRecords < ActiveRecord::Migration\n/
-    end
-  end
-
-  context 'with active_record singular table names' do
-    before(:all) do
-      prepare_destination
-      ActiveRecord::Base.pluralize_table_names = false
-      run_generator
+        assert_migration 'db/migrate/create_task_records.rb', /class CreateTaskRecords < ActiveRecord::Migration\[20.7\]\n/
+      end
     end
 
-    after(:all) do
-      ActiveRecord::Base.pluralize_table_names = true
+    context 'under rails 3' do
+      it 'copies the template with rails 3/4 compatible migrations' do
+        allow_any_instance_of(AfterParty::Generators::InstallGenerator).to receive(:requires_version_tag?).and_return(false)
+        prepare_destination
+        run_generator
+
+        assert_migration 'db/migrate/create_task_records.rb', /class CreateTaskRecords < ActiveRecord::Migration\n/
+      end
     end
 
-    it 'creates the migration with singular table name if pluralization is off ' do
-      assert_migration 'db/migrate/create_task_record.rb', /create_table :task_record, :id => false do |t|/
+    context 'with active_record singular table names' do
+      before(:all) do
+        prepare_destination
+        ActiveRecord::Base.pluralize_table_names = false
+        run_generator
+      end
+
+      after(:all) do
+        ActiveRecord::Base.pluralize_table_names = true
+      end
+
+      it 'creates the migration with singular table name if pluralization is off ' do
+        assert_migration 'db/migrate/create_task_record.rb', /create_table :task_record, :id => false do |t|/
+      end
     end
   end
 end
 
 describe AfterParty::Generators::InstallGenerator do
   include GeneratorSpec::TestCase
+  destination File.expand_path('../../tmp', __FILE__)
 
   context 'with mongoid' do
-    destination File.expand_path('../tmp', __dir__)
     arguments %w[mongoid]
 
     before(:all) do
