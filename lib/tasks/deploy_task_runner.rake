@@ -1,17 +1,14 @@
 namespace :after_party do
-  desc "runs (in order) all pending after_party deployment tasks, if they have not run yet against the current db."
+  desc 'runs (in order) all pending after_party deployment tasks, if they have not run yet against the current db.'
   task :run => :environment do
-    tasks = AfterParty::TaskRecorder.pending_files.map {|f| "after_party:#{f.task_name}"}
+    tasks = AfterParty::TaskRecorder.pending_files.map { |f| "after_party:#{f.task_name}" }
 
-    tasks.each {|t| Rake::Task[t].invoke}
+    tasks.each { |t| Rake::Task[t].invoke }
 
-    if tasks.empty?
-      puts "no pending tasks to run"
-    end
-
+    puts 'no pending tasks to run' if tasks.empty?
   end
 
-  desc "Check the status of after_party deployment tasks"
+  desc 'Check the status of after_party deployment tasks'
   task :status => :environment do
     tasks = Dir[AfterParty::TaskRecorder::FILE_MASK].sort.collect do |filename|
       recorder = AfterParty::TaskRecorder.new(filename)
@@ -22,10 +19,10 @@ namespace :after_party do
       }
     end
 
-    puts <<-EOF
+    puts <<-TABLE
 Status   Task ID         Task Name
 --------------------------------------------------
-    EOF
+    TABLE
     tasks.each do |task|
       puts " #{task[:status]}    #{task[:version]}  #{task[:task_name].capitalize}"
     end

@@ -4,6 +4,7 @@
 .config
 .idea/*
 .idea
+.byebug_history
 coverage
 InstalledFiles
 lib/bundler/man

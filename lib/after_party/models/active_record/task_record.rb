@@ -1,11 +1,10 @@
 module AfterParty
+  # Task Record is a persisted object recorded when a taks is run.
   class TaskRecord < ActiveRecord::Base
-    if ::Rails::VERSION::MAJOR.to_i == 3
-      attr_accessible :version
-    end
+    attr_accessible :version if ::Rails::VERSION::MAJOR.to_i == 3
 
     def self.completed_task?(version)
-      all.any?{|t| t.version == version}
+      all.any? { |t| t.version == version }
     end
   end
 end
