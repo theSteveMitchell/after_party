@@ -14,7 +14,6 @@ Gem::Specification.new do |gem|
   gem.require_path = 'lib'
 
   gem.add_development_dependency 'activerecord'
-  gem.add_development_dependency 'byebug'
   gem.add_development_dependency 'factory_bot'
   gem.add_development_dependency 'generator_spec'
   gem.add_development_dependency 'mongoid'
