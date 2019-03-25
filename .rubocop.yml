@@ -5,12 +5,13 @@ AllCops:
     - 'Gemfile.lock'
     - db/schema.rb
     - config/**/*.rb
+    - script/rails
 
 Layout/IndentationWidth:
   Enabled: false
 
 Metrics/LineLength:
-  Max: 100
+  Max: 130
   Exclude:
     - '*.gemspec'
 
@@ -18,9 +19,6 @@ Style/RescueModifier:
   Enabled: false
 
 Layout/TrailingBlankLines:
-  Enabled: false
-
-Layout/AccessModifierIndentation:
   Enabled: false
 
 Style/BlockComments:
@@ -32,7 +30,15 @@ Style/FrozenStringLiteralComment:
 
 Metrics/BlockLength:
   Exclude: 
-    - 'spec/*'
+    - 'spec/**/*.rb'
 
-Layout/MultilineMethodCallIndentation:
+Layout/AlignParameters:
+  EnforcedStyle: 'with_fixed_indentation'
+
+# These may break ruby 1.9 support:
+
+Layout/IndentHeredoc:
+  Enabled: false
+
+Style/HashSyntax:
   Enabled: false

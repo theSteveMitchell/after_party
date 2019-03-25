@@ -1,16 +1,16 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV['RAILS_ENV'] ||= 'test'
-require File.expand_path('../../config/environment', __FILE__)
+require File.expand_path('../config/environment', __dir__)
 require 'rspec/rails'
 require 'factory_bot'
 
-Dir[Rails.root.join('lib/after_party/models/*.rb')].each {|f| require f}
-Dir[Rails.root.join('lib/after_party/models/active_record/*.rb')].each {|f| require f}
-Dir[Rails.root.join('spec/factories/*.rb')].each {|f| require f}
+Dir[Rails.root.join('lib/after_party/models/*.rb')].each { |f| require f }
+Dir[Rails.root.join('lib/after_party/models/active_record/*.rb')].each { |f| require f }
+Dir[Rails.root.join('spec/factories/*.rb')].each { |f| require f }
 
-Dir[Rails.root.join('lib/*.rb')].each {|f| require f}
-Dir[Rails.root.join('lib/generators/install/*.rb')].each {|f| require f}
-Dir[Rails.root.join('lib/generators/task/*.rb')].each {|f| require f}
+Dir[Rails.root.join('lib/*.rb')].each { |f| require f }
+Dir[Rails.root.join('lib/generators/install/*.rb')].each { |f| require f }
+Dir[Rails.root.join('lib/generators/task/*.rb')].each { |f| require f }
 
 if ActiveRecord::VERSION::MAJOR >= 5
   ActiveRecord::Migration.migrate(File.join(Rails.root, 'db/migrate'))
