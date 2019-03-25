@@ -3,9 +3,9 @@ language: ruby
 
 matrix:
   include:
-  - rvm: 1.9.3
+  - rvm: 2.0.0
     gemfile: gemfiles/Gemfile.rails-3.2.x
-  - rvm: 1.9.3
+  - rvm: 2.0.0
     gemfile: Gemfile
   - rvm: 2.0.0
     gemfile: Gemfile
