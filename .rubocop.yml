@@ -1,0 +1,38 @@
+AllCops:
+  Exclude:
+    - '*.md'
+    - 'Gemfile'
+    - 'Gemfile.lock'
+    - db/schema.rb
+    - config/**/*.rb
+
+Layout/IndentationWidth:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 100
+  Exclude:
+    - '*.gemspec'
+
+Style/RescueModifier:
+  Enabled: false
+
+Layout/TrailingBlankLines:
+  Enabled: false
+
+Layout/AccessModifierIndentation:
+  Enabled: false
+
+Style/BlockComments:
+  Exclude:
+    - 'spec/spec_helper.rb'
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Metrics/BlockLength:
+  Exclude: 
+    - 'spec/*'
+
+Layout/MultilineMethodCallIndentation:
+  Enabled: false

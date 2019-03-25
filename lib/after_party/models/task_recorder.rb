@@ -3,7 +3,7 @@ module AfterParty
     include ActiveModel::Naming
     attr_reader :filename, :timestamp, :task_name
 
-    FILE_MASK = File.join(Rails.root, "lib/tasks/deployment/*.rake")
+    FILE_MASK = File.join(Rails.root, 'lib/tasks/deployment/*.rake')
 
     def self.pending_files
       Dir[FILE_MASK].collect{ |f| TaskRecorder.new(f) }.select{ |f| f.pending? }.sort{ |x,y| x.timestamp <=> y.timestamp }
