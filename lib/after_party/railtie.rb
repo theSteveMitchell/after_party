@@ -1,8 +1,8 @@
 require 'after_party'
 require 'rails'
 module AfterParty
+  # railtie is loaded from lib/after_party.rb.  So all load paths need to be relative to /lib
   class Railtie < Rails::Railtie
-    #railtie is loaded from lib/after_party.rb.  So all load paths need to be relative to /lib
     rake_tasks do
       load 'tasks/deploy_task_runner.rake'
     end
@@ -16,6 +16,4 @@ module AfterParty
       load 'generators/install/install_generator.rb'
     end
   end
-
-
 end

@@ -1,4 +1,5 @@
 module AfterParty
+  # Task Recorder is responsible for collecting pending tasks and recording their execution
   class TaskRecorder
     include ActiveModel::Naming
     attr_reader :filename, :timestamp, :task_name
@@ -6,10 +7,12 @@ module AfterParty
     FILE_MASK = File.join(Rails.root, 'lib/tasks/deployment/*.rake')
 
     def self.pending_files
-      Dir[FILE_MASK].collect{ |f| TaskRecorder.new(f) }.select{ |f| f.pending? }.sort{ |x,y| x.timestamp <=> y.timestamp }
+      Dir[FILE_MASK].collect { |f| TaskRecorder.new(f) }
+        .select(&:pending?)
+        .sort_by(&:timestamp)
     end
 
-    def initialize(filename='')
+    def initialize(filename = '')
       @filename = filename
       parse_filename
     end
@@ -19,9 +22,10 @@ module AfterParty
     end
 
     def parse_filename
-      /(\d+)_(.+)\.rake/.match(Pathname(@filename).basename.to_s)
-      @timestamp = $1
-      @task_name = $2
+      /(\d+)_(.+)\.rake/.match(Pathname(@filename).basename.to_s) do |m|
+        @timestamp = m[1]
+        @task_name = m[2]
+      end
     end
   end
 end

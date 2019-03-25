@@ -22,7 +22,7 @@ describe 'rake after_party:run' do
 
     it 'should log the tasks that have run' do
       expect(AfterParty::TaskRecord.count).to be(0)
-      Dir.glob(AfterParty::TaskRecorder::FILE_MASK).each { |r| load r}
+      Dir.glob(AfterParty::TaskRecorder::FILE_MASK).each { |r| load r }
       Rake::Task['after_party:run'].invoke
       expect(AfterParty::TaskRecord.all.map(&:version)).to eq(%w[20120205141454 20130205176456 20130207948264])
     end

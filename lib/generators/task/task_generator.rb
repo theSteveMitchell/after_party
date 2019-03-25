@@ -2,8 +2,9 @@ require 'date'
 
 module AfterParty
   module Generators
+    # creates after_party tasks
     class TaskGenerator < Rails::Generators::Base
-      source_root(File.expand_path('../templates', __FILE__))
+      source_root(File.expand_path('templates', __dir__))
       argument(:name, type: :string)
       class_option(
         :description,
@@ -27,12 +28,13 @@ module AfterParty
       def task_description
         line = 'Deployment task: '
         return line + file_name if options.description.blank?
+
         line + options.description
       end
 
       def timestamp
         @timestamp ||= Time.now.utc.strftime('%Y%m%d%H%M%S')
       end
-    end  # class TaskGenerator
-  end  # module Generators
-end  # module AfterParty
+    end
+  end
+end
