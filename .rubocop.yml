@@ -21,6 +21,10 @@ Style/RescueModifier:
 Layout/TrailingBlankLines:
   Enabled: false
 
+Lint/UnusedBlockArgument:
+  Exclude:
+    - 'spec/tmp/**/*.rb'
+
 Style/BlockComments:
   Exclude:
     - 'spec/spec_helper.rb'

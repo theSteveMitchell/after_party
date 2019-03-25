@@ -1,7 +1,6 @@
 require 'spec_helper'
 require 'rake'
 require 'fileutils'
-require 'byebug'
 
 describe 'rake after_party:run' do
   include FileUtils
