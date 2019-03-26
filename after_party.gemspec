@@ -13,7 +13,7 @@ Gem::Specification.new do |gem|
   gem.files = Dir['lib/**/**']
   gem.require_path = 'lib'
 
-  gem.required_ruby_version = '>= 2.0'
+  gem.required_ruby_version = '>= 2.3'
 
   gem.add_development_dependency 'activerecord'
   gem.add_development_dependency 'factory_bot'

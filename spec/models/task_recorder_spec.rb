@@ -26,8 +26,8 @@ module AfterParty
 
       context 'When some tasks have been completed' do
         before(:all) do
-          create :task_record, :version => '20120205141454'
-          create :task_record, :version => '20130207948264'
+          create :task_record, version: '20120205141454'
+          create :task_record, version: '20130207948264'
         end
 
         after(:all) do

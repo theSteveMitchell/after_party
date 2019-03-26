@@ -3,7 +3,7 @@ require 'generator_spec/test_case'
 
 describe AfterParty::Generators::InstallGenerator do
   include GeneratorSpec::TestCase
-  destination File.expand_path('../../tmp', __FILE__)
+  destination File.expand_path('../tmp', __dir__)
 
   context 'with active_record' do
     arguments %w[active_record]
@@ -70,7 +70,7 @@ end
 
 describe AfterParty::Generators::InstallGenerator do
   include GeneratorSpec::TestCase
-  destination File.expand_path('../../tmp', __FILE__)
+  destination File.expand_path('../tmp', __dir__)
 
   context 'with mongoid' do
     arguments %w[mongoid]

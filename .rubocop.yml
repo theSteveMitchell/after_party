@@ -1,4 +1,6 @@
 AllCops:
+  TargetRubyVersion:
+    2.3
   Exclude:
     - '*.md'
     - 'Gemfile'
@@ -46,14 +48,3 @@ Style/Documentation:
   Exclude:
     - 'db/migrate/*.rb'
     - 'spec/**/*.rb'
-
-# These may break ruby 1.9 support:
-
-Layout/IndentHeredoc:
-  Enabled: false
-
-Style/HashSyntax:
-  Enabled: false
-
-Style/ExpandPathArguments:
-  Enabled: false
