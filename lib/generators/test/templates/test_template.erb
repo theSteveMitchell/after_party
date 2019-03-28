@@ -1,0 +1,15 @@
+require 'rails_helper'
+
+describe '<%= @clean_file_name %>', type: :task do
+
+  before :each do
+    Rake.application.rake_require 'tasks/deployment/<%= file_name %>'
+    Rake::Task.define_task(:environment)
+  end
+
+  subject { Rake::Task['after_party:<%= @clean_file_name %>'].execute }
+
+  it 'works' do
+    expect{ subject }.not_to raise_error
+  end
+end
