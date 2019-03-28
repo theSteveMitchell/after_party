@@ -19,7 +19,7 @@ namespace :after_party do
       }
     end
 
-    puts <<~TABLE
+    puts <<-TABLE.strip_heredoc
       Status   Task ID         Task Name
       --------------------------------------------------
     TABLE
