@@ -13,7 +13,7 @@ module AfterParty
       )
       class_option(
         :test,
-        type: :boolean
+        type: :boolean,
         description: 'Generate a rspec test for task'
       )
 
