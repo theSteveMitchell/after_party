@@ -1,0 +1,8 @@
+Description:
+    Generates a basic rspec test template for rake after_party task
+
+Example:
+    rails generate after_party_test 2019112233_your_task_name
+
+    This will create:
+        spec/lib/task/deploy/your_task_name_spec.rb
