@@ -25,7 +25,7 @@ describe 'rake after_party:status' do
     end
 
     it 'should STDOUT a table with all tasks and their status' do
-      expected_output = <<~TABLE
+      expected_output = <<-TABLE.strip_heredoc
         Status   Task ID         Task Name
         --------------------------------------------------
           up     20120205141454  M three

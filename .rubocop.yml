@@ -1,6 +1,4 @@
 AllCops:
-  TargetRubyVersion:
-    2.3
   Exclude:
     - '*.md'
     - 'Gemfile'
@@ -8,6 +6,9 @@ AllCops:
     - db/schema.rb
     - config/**/*.rb
     - script/rails
+
+Gemspec/RequiredRubyVersion:
+  Enabled: false
 
 Layout/IndentationWidth:
   Enabled: false
