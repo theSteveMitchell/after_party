@@ -22,7 +22,7 @@ module AfterParty
           'deploy.txt.erb',
           "lib/tasks/deployment/#{timestamp}_#{file_name}.rake"
         )
-        generate 'after_party_test' if options.test
+        generate 'test', "#{timestamp}_#{file_name}" if options.test
       end
 
       private
