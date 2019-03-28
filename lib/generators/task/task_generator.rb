@@ -11,12 +11,18 @@ module AfterParty
         type: :string,
         description: 'Include a description'
       )
+      class_option(
+        :test,
+        type: :boolean
+        description: 'Generate a rspec test for task'
+      )
 
       def copy_deploy_task
         template(
           'deploy.txt.erb',
           "lib/tasks/deployment/#{timestamp}_#{file_name}.rake"
         )
+        generate 'after_party_test' if options.test
       end
 
       private
