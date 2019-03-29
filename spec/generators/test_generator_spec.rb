@@ -14,7 +14,7 @@ describe AfterParty::Generators::TestGenerator do
     it 'creates the rspec spec file and with correct filename from arguments ' do
       run_generator %w[20190329065841_task_with_test]
       assert_generated 'spec/lib/tasks/deployment/task_with_test_spec.rb',
-                       /desc 'a_description_of_said_task'/
+                       /describe 'task_with_test', type: :task do/
     end
   end
 
@@ -30,6 +30,6 @@ describe AfterParty::Generators::TestGenerator do
     absolute = File.expand_path(relative, destination_root)
     dirname = File.dirname(absolute)
     file_name = File.basename(absolute).sub(/\.rb$/, '').downcase
-    Dir.glob("#{dirname}/[0-9]*_*.rake").grep(/\d+_#{file_name}$/).first
+    Dir.glob("#{dirname}/*_spec.rb").grep(/#{file_name}/).first
   end
 end
