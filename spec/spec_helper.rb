@@ -11,6 +11,7 @@ Dir[Rails.root.join('spec/factories/*.rb')].each { |f| require f }
 Dir[Rails.root.join('lib/*.rb')].each { |f| require f }
 Dir[Rails.root.join('lib/generators/install/*.rb')].each { |f| require f }
 Dir[Rails.root.join('lib/generators/task/*.rb')].each { |f| require f }
+Dir[Rails.root.join('lib/generators/test/*.rb')].each { |f| require f }
 
 if ActiveRecord::VERSION::MAJOR >= 5
   ActiveRecord::Migration.migrate(File.join(Rails.root, 'db/migrate'))
