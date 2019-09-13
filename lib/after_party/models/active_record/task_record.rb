@@ -4,7 +4,7 @@ module AfterParty
     attr_accessible :version if ::Rails::VERSION::MAJOR.to_i == 3
 
     def self.completed_task?(version)
-      all.any? { |t| t.version == version }
+      where(version: version).any?
     end
   end
 end
