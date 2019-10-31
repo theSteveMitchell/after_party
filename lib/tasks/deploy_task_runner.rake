@@ -3,7 +3,7 @@ namespace :after_party do
   task :run => :environment do
     tasks = AfterParty::TaskRecorder.pending_files.map { |f| "after_party:#{f.task_name}" }
 
-    tasks.each { |t| Rake::Task[t].invoke }
+    tasks.each { |t| Rake::Task[t].invoke; GC.start }
 
     puts 'no pending tasks to run' if tasks.empty?
   end
