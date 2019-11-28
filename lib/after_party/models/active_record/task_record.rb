@@ -8,7 +8,7 @@ module AfterParty
     end
 
     def self.record_task_run(filename)
-      create(version: AfterParty::TaskRecorder.new(__FILE__).timestamp)
+      create(version: AfterParty::TaskRecorder.new(filename).timestamp)
     end
   end
 end
