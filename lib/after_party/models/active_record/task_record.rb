@@ -6,5 +6,9 @@ module AfterParty
     def self.completed_task?(version)
       all.any? { |t| t.version == version }
     end
+
+    def self.record_task_run(filename)
+      create(version: AfterParty::TaskRecorder.new(__FILE__).timestamp)
+    end
   end
 end
