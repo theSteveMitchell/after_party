@@ -13,7 +13,7 @@ matrix:
     gemfile: Gemfile
   - rvm: 2.2.3
     gemfile: Gemfile
-  - rvm: 2.6.0
+  - rvm: 2.6.3
     gemfile: Gemfile
 
 script: bundle exec rake db:migrate RAILS_ENV=test && bundle exec rspec spec
