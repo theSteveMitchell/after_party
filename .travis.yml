@@ -9,11 +9,11 @@ matrix:
     gemfile: Gemfile
   - rvm: 2.0.0
     gemfile: Gemfile
-  - rvm: 2.1.4
+  - rvm: 2.1
     gemfile: Gemfile
-  - rvm: 2.2.3
+  - rvm: 2.2
     gemfile: Gemfile
-  - rvm: 2.6.3
+  - rvm: 2.6
     gemfile: Gemfile
 
 script: bundle exec rake db:migrate RAILS_ENV=test && bundle exec rspec spec
