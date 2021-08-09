@@ -21,11 +21,11 @@ module AfterParty
         end
       end
 
+      private
+      
       def requires_version_tag?
         ActiveRecord::VERSION::MAJOR >= 5
       end
-
-      private
 
       def timestamp
         @timestamp ||= Time.now.utc.strftime('%Y%m%d%H%M%S')
