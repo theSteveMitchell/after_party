@@ -1,5 +1,5 @@
 module AfterParty
-  # Task Record is a persisted object recorded when a taks is run.
+  # Task Record is a persisted object recorded when a task is run.
   class TaskRecord < ActiveRecord::Base
     attr_accessible :version if ::Rails::VERSION::MAJOR.to_i == 3
 
