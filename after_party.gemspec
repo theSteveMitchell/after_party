@@ -22,5 +22,5 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'rspec', '~> 3'
   gem.add_development_dependency 'rspec-rails', '~> 5'
   gem.add_development_dependency 'rubocop', '~> 1'
-  gem.add_development_dependency 'sqlite3', '~> 1'
+  gem.add_development_dependency 'pg', '~> 1'
 end
