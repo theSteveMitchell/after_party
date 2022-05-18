@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 namespace :after_party do
   desc 'Deployment task: a_description_of_said_task'
   task a_second2: :environment do

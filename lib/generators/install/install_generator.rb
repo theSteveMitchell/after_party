@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 require 'rails/generators'
 
 module AfterParty
   module Generators
     # Generates the after_party.rb in config/initializers and a migration file
     class InstallGenerator < Rails::Generators::Base
-      source_root File.expand_path('../templates', __FILE__)
-      argument :orm_name, :type => :string, :default => 'active_record'
+      source_root File.expand_path('templates', __dir__)
+      argument :orm_name, type: :string, default: 'active_record'
 
       def create_initializer_file
         template 'after_party.txt.erb', 'config/initializers/after_party.rb'

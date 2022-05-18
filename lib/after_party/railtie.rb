@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'after_party'
 require 'rails'
 module AfterParty
