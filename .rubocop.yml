@@ -4,9 +4,10 @@ AllCops:
     - '*.md'
     - 'Gemfile'
     - 'Gemfile.lock'
-    - db/schema.rb
-    - config/**/*.rb
-    - script/rails
+    - 'db/schema.rb'
+    - 'config/**/*.rb'
+    - 'script/rails'
+    - 'vendor/**/*'
 
 Metrics/LineLength:
   Max: 130

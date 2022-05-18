@@ -28,14 +28,24 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      # Add or replace dependency steps here
       - name: Install Ruby and gems
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+      # Runners
       - name: Set up database schema
         run: RAILS_ENV=test bundle exec rake db:prepare
-
-      # Add or replace test runners here
       - name: Run tests
         run: bundle exec rspec spec
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Install Ruby and gems
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      # Runners
+      - name: Run Rubocop
+        run: bundle exec rubocop --parallel --format github --format progress
