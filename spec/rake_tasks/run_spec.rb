@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 require 'rake'
 require 'fileutils'
@@ -8,9 +10,9 @@ describe 'rake after_party:run' do
   before(:all) do
     AfterParty::Application.load_tasks
 
-    FILE_PATH = File.join(Rails.root, 'spec/fixtures/tasks/deployment/')
+    file_path = File.join(Rails.root, 'spec/fixtures/tasks/deployment/')
     silence_warnings do
-      AfterParty::TaskRecorder::FILE_MASK = File.join(FILE_PATH, '/*.rake')
+      AfterParty::TaskRecorder::FILE_MASK = File.join(file_path, '/*.rake')
     end
   end
 

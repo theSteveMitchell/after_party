@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 require 'fileutils'
 
@@ -6,9 +8,9 @@ module AfterParty
     include FileUtils
 
     before(:all) do
-      FILE_PATH = File.join(Rails.root, 'spec/fixtures/tasks/deployment/')
+      file_path = File.join(Rails.root, 'spec/fixtures/tasks/deployment/')
       silence_warnings do
-        TaskRecorder::FILE_MASK = File.join(FILE_PATH, '/*.rake')
+        TaskRecorder::FILE_MASK = File.join(file_path, '/*.rake')
       end
     end
 
@@ -26,8 +28,8 @@ module AfterParty
 
       context 'When some tasks have been completed' do
         before(:all) do
-          create :task_record, :version => '20120205141454'
-          create :task_record, :version => '20130207948264'
+          create :task_record, version: '20120205141454'
+          create :task_record, version: '20130207948264'
         end
 
         after(:all) do

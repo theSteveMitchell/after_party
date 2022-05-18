@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 require 'generator_spec/test_case'
 
 describe AfterParty::Generators::InstallGenerator do
   include GeneratorSpec::TestCase
-  destination File.expand_path('../../tmp', __FILE__)
+  destination File.expand_path('../tmp', __dir__)
 
   context 'with active_record' do
     arguments %w[active_record]
@@ -14,7 +16,7 @@ describe AfterParty::Generators::InstallGenerator do
     end
 
     it 'creates an initializer' do
-      assert_file 'config/initializers/after_party.rb', %r{require 'after_party\/active_record.rb'}
+      assert_file 'config/initializers/after_party.rb', %r{require 'after_party/active_record.rb'}
     end
 
     it 'creates the migration file ' do
@@ -70,7 +72,7 @@ end
 
 describe AfterParty::Generators::InstallGenerator do
   include GeneratorSpec::TestCase
-  destination File.expand_path('../../tmp', __FILE__)
+  destination File.expand_path('../tmp', __dir__)
 
   context 'with mongoid' do
     arguments %w[mongoid]

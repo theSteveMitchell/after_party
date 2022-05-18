@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module AfterParty
   # Task Record is a persisted object recorded when a taks is run.
   class TaskRecord
