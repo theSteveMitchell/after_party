@@ -1,6 +1,8 @@
+require_relative 'lib/version'
+
 Gem::Specification.new do |gem|
   gem.name = 'after_party'
-  gem.version = '1.11.2'
+  gem.version = Version::VERSION
   gem.date = '2019-03-25'
 
   gem.authors = 'Steve Mitchell'
@@ -13,12 +15,12 @@ Gem::Specification.new do |gem|
   gem.files = Dir['lib/**/**']
   gem.require_path = 'lib'
 
-  gem.add_development_dependency 'activerecord'
-  gem.add_development_dependency 'factory_bot'
-  gem.add_development_dependency 'generator_spec'
-  gem.add_development_dependency 'mongoid'
-  gem.add_development_dependency 'rspec'
-  gem.add_development_dependency 'rspec-rails', '~> 3.4'
-  gem.add_development_dependency 'rubocop'
-  gem.add_development_dependency 'sqlite3', '~> 1.3.6'
+  gem.add_development_dependency 'activerecord', '~> 7'
+  gem.add_development_dependency 'factory_bot', '~> 6'
+  gem.add_development_dependency 'generator_spec', '~> 0'
+  gem.add_development_dependency 'mongoid', '~> 7'
+  gem.add_development_dependency 'rspec', '~> 3'
+  gem.add_development_dependency 'rspec-rails', '~> 5'
+  gem.add_development_dependency 'rubocop', '~> 1'
+  gem.add_development_dependency 'sqlite3', '~> 1'
 end
