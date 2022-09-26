@@ -13,7 +13,7 @@ module AfterParty
     end
 
     def self.completed_versions
-      @completed_versions ||= TaskRecord.pluck(&:version)
+      @completed_versions ||= TaskRecord.pluck(:version)
     end
 
     def initialize(filename = '')
