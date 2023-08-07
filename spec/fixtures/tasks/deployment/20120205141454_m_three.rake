@@ -1,8 +1,6 @@
 namespace :after_party do
-  desc '<%= task_description %>'
-  task <%= file_name %>: :environment do
-    puts "Running deploy task '<%= file_name %>'"
-
+  desc 'Deployment task: a_description_of_said_task'
+  task m_three: :environment do
     # Put your task implementation HERE.
 
     # Update task as completed.  If you remove the line below, the task will

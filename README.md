@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/theSteveMitchell/after_party.svg?branch=master)](https://travis-ci.org/theSteveMitchell/after_party)
+
 ## After_party
 
 After_party helps you create and manage automated deploy tasks in your Rails application.
@@ -70,7 +72,7 @@ Finally, You'll want to glue this all together.  Update the deploy.rb (or whatev
    end
  end
 
-after  'deploy:update_code', 'db:migrate', 'db:seed', 'deploy:after_party'
+after 'deploy:migrate', 'deploy:after_party'
 ```
 
 This will ensure your deploy tasks always run after your migrations, so they can safely load or interact with any models in your system.

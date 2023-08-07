@@ -4,6 +4,7 @@
 .config
 .idea/*
 .idea
+.byebug_history
 coverage
 InstalledFiles
 lib/bundler/man
@@ -18,6 +19,9 @@ log
 log/*.log
 log/*.pid
 Gemfile.lock
+
+gemfiles/Gemfile-rails-3.2.x
+gemfiles/Gemfile.rails-3.2.x.lock
 
 # YARD artifacts
 .yardoc
