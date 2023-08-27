@@ -124,7 +124,7 @@ You can do all of these things in seeds, migrations, manual rake tasks, etc.  Bu
 ## Caveats, Warnings, and Daily Affirmations
 * Rollback behavior is for the birds.  Should your task fail halfway through, it will not record progress (and will fail your deploy if you're using the capistrano config).  Since these tasks might be data updates, those changes can be very large, and rollback/recording progress is not supported.  Build your tasks to be idempotent, so if they are run more than once it doesn't kill you.
 
-* Make sure you understand the difference between schema migration and data migration.  After_party is meant to help you with the latter.  Sometimes it's appropriate for schema migrations to manipulate date (i.e. to populate a new field with a default, or convert an integer column to a string).  Sometimes this requires you to work with your rails models in the migration.  If you have occasional failures in your migrations due to model-DB mismatch [as explained here](http://guides.rubyonrails.org/migrations.html#using-models-in-your-migrations) then After_party might not be the right tool.
+* Make sure you understand the difference between schema migration and data migration.  After_party is meant to help you with the latter.  Sometimes it's appropriate for schema migrations to manipulate data (i.e. to populate a new field with a default, or convert an integer column to a string).  Sometimes this requires you to work with your rails models in the migration.  If you have occasional failures in your migrations due to model-DB mismatch [as explained here](http://guides.rubyonrails.org/migrations.html#using-models-in-your-migrations) then After_party might not be the right tool.
 
 
 ## Contribute ##
