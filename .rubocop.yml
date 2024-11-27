@@ -30,3 +30,6 @@ Style/Documentation:
   Exclude:
     - 'db/migrate/*.rb'
     - 'spec/**/*.rb'
+
+Gemspec/DevelopmentDependencies:
+  EnforcedStyle: "gemspec"
