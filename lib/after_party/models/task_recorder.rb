@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module AfterParty
   # Task Recorder is responsible for collecting pending tasks and recording their execution
   class TaskRecorder
@@ -8,8 +10,8 @@ module AfterParty
 
     def self.pending_files
       Dir[FILE_MASK].collect { |f| TaskRecorder.new(f) }
-        .select(&:pending?)
-        .sort_by(&:timestamp)
+                    .select(&:pending?)
+                    .sort_by(&:timestamp)
     end
 
     def initialize(filename = '')
