@@ -1,6 +1,6 @@
 class CreateTaskRecords < ActiveRecord::Migration[<%=rails_version_for_migration%>]
   def change
-    create_table :<%= table_name %>, :id => false do |t|
+    create_table :<%= table_name %> do |t|
       t.string :version, :null => false
     end
   end
