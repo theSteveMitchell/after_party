@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 require 'date'
 
 module AfterParty
   module Generators
     # creates after_party tasks
     class TaskGenerator < Rails::Generators::Base
-      FILE_MASK = File.join(Rails.root, "lib/tasks/deployment/*.rake")
-      source_root(File.expand_path('../templates', __FILE__))
+      FILE_MASK = File.join(Rails.root, 'lib/tasks/deployment/*.rake')
+      source_root(File.expand_path('templates', __dir__))
       argument(:name, type: :string)
       class_option(
         :description,
@@ -14,15 +16,15 @@ module AfterParty
       )
 
       def copy_deploy_task
-        file_names = Dir[FILE_MASK].collect{ |f| AfterParty::TaskRecorder.new(f) }.map {|f| "#{f.task_name}"}
+        file_names = Dir[FILE_MASK].collect { |f| AfterParty::TaskRecorder.new(f) }.map { |f| f.task_name.to_s }
         if file_names.include?(file_name)
-          puts "Error: Please Create a unique task name"
+          puts 'Error: Please Create a unique task name'
         else
           template(
-          'deploy.txt.erb',
-          "lib/tasks/deployment/#{timestamp}_#{file_name}.rake"
+            'deploy.txt.erb',
+            "lib/tasks/deployment/#{timestamp}_#{file_name}.rake"
           )
-        end   
+        end
       end
 
       private

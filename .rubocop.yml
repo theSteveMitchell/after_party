@@ -1,25 +1,18 @@
 AllCops:
+  NewCops: enable
   Exclude:
     - '*.md'
     - 'Gemfile'
     - 'Gemfile.lock'
-    - db/schema.rb
-    - config/**/*.rb
-    - script/rails
-
-Layout/IndentationWidth:
-  Enabled: false
+    - 'db/schema.rb'
+    - 'config/**/*.rb'
+    - 'script/rails'
+    - 'vendor/**/*'
 
 Metrics/LineLength:
   Max: 130
   Exclude:
     - '*.gemspec'
-
-Style/RescueModifier:
-  Enabled: false
-
-Layout/TrailingBlankLines:
-  Enabled: false
 
 Lint/UnusedBlockArgument:
   Exclude:
@@ -29,31 +22,14 @@ Style/BlockComments:
   Exclude:
     - 'spec/spec_helper.rb'
 
-Style/FrozenStringLiteralComment:
-  Enabled: false
-
 Metrics/BlockLength:
-  Exclude: 
+  Exclude:
     - 'spec/**/*.rb'
-
-Layout/AlignParameters:
-  EnforcedStyle: 'with_fixed_indentation'
-
-Layout/MultilineMethodCallIndentation:
-  EnforcedStyle: 'indented'
 
 Style/Documentation:
   Exclude:
     - 'db/migrate/*.rb'
     - 'spec/**/*.rb'
 
-# These may break ruby 1.9 support:
-
-Layout/IndentHeredoc:
-  Enabled: false
-
-Style/HashSyntax:
-  Enabled: false
-
-Style/ExpandPathArguments:
-  Enabled: false
+Gemspec/DevelopmentDependencies:
+  EnforcedStyle: "gemspec"
