@@ -4,8 +4,8 @@ require 'spec_helper'
 
 describe AfterParty::Generators::TaskGenerator do
   require 'generator_spec/test_case'
-
   include GeneratorSpec::TestCase
+
   destination File.expand_path('../tmp', __dir__)
 
   before(:all) do

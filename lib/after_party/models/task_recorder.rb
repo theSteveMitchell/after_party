@@ -4,6 +4,7 @@ module AfterParty
   # Task Recorder is responsible for collecting pending tasks and recording their execution
   class TaskRecorder
     include ActiveModel::Naming
+    
     attr_reader :filename, :timestamp, :task_name
 
     FILE_MASK = File.join(Rails.root, 'lib/tasks/deployment/*.rake')
