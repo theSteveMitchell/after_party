@@ -9,7 +9,7 @@ AllCops:
     - 'script/rails'
     - 'vendor/**/*'
 
-Metrics/LineLength:
+Layout/LineLength:
   Max: 130
   Exclude:
     - '*.gemspec'
