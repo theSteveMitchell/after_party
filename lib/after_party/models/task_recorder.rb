@@ -15,13 +15,17 @@ module AfterParty
                     .sort_by(&:timestamp)
     end
 
+    def self.completed_versions
+      @completed_versions ||= TaskRecord.pluck(:version)
+    end
+
     def initialize(filename = '')
       @filename = filename
       parse_filename
     end
 
     def pending?
-      timestamp && !TaskRecord.completed_task?(timestamp)
+      timestamp && !self.class.completed_versions.include?(timestamp)
     end
 
     def parse_filename

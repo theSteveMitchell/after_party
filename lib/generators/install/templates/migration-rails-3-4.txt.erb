@@ -1,7 +1,7 @@
 class CreateTaskRecords < ActiveRecord::Migration
   def change
     create_table :<%= table_name %>, :id => false do |t|
-      t.string :version, :null => false
+      t.string :version, :null => false, :index => { unique: true }
     end
   end
 end
